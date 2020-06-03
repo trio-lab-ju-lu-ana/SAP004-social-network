@@ -1,25 +1,13 @@
-// Aqui serão criados os eventos de Manipulação de DOM e templates
-import { greeting } from './data.js';
-
-export const home = () => {
+export default () => {
   const container = document.createElement('div');
 
-  container.innerHTML = `
-    <form>
-      <input id='name' type='text'>
-      <button id='greeting-btn'>Dizer Oi</button>
-    </form>
-    <div id='greeting-message'></div>
-  `;
+  const template = `
+    <br>
+    <h2>Welcome to our Social Network XXX<h2>
 
-  const name = container.querySelector('#name');
-  const greetingBtn = container.querySelector('#greeting-btn');
-  const greetingMessage = container.querySelector('#greeting-message');
-
-  greetingBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    greetingMessage.innerHTML = greeting(name.value);
-  });
-
+    <p>We decided to create a Gaming Social Network to provide a secure place for women which are gamers and want to talk about <br>
+    games and the lyfestyle gamer without the online envirolment toxicity.<p><br>
+    `;
+  container.innerHTML += template;
   return container;
 };
