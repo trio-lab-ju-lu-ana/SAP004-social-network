@@ -1,4 +1,4 @@
-export default () => {
+export const login =  () => {
   const container = document.createElement('div');
 
   const template = `
