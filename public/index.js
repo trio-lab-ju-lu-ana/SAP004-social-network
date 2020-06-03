@@ -1,4 +1,4 @@
-//import Login from './pages/Login/main.js';
+import {login}  from './pages/Login/main.js';
 //import Home from './pages/Home/main.js';
 import {signUp} from './pages/Cadastro/main.js';
  console.log(signUp())
@@ -8,7 +8,7 @@ const root = document.querySelector('#root');
 const renderRoute = (root,route,title) => {
     document.title = title
     root.innerHTML = ""
-    rooot.appendChild(route)
+    root.appendChild(route)
 }
 
 
@@ -19,7 +19,7 @@ const renderRoute = (root,route,title) => {
     },
     {
         route: "register",
-        html: singUp(),
+        html: signUp(),
         title: "Cadastro"
     },
    
