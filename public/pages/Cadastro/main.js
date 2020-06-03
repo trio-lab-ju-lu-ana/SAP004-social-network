@@ -1,7 +1,7 @@
 export const signUp = () => {
-  const signUpContainer = document.createElement('div');
-  
-  signUpContainer.innerHTML = `
+  const container = document.createElement('div');
+
+  const template = `
   <form id="register-form">
   <h2 id='register'>Cadastro</h2>
   <fieldset>
@@ -19,9 +19,10 @@ export const signUp = () => {
   <button id='register-button' type="submit">Cadastrar!</button>
   <div>já tem uma conta?<a href="#login">login</a></div>
 </form>
-      `//container.innerHTML += template;
-  
-  
-  
-      return signUpContainer;
+      `
+  container.innerHTML += template;
+
+
+
+  return container;
 };

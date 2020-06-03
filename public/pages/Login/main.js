@@ -1,20 +1,20 @@
-export const login =  () => {
+export const login = () => {
   const container = document.createElement('div');
 
   const template = `
-    <br>
-    <form style="border: 1px solid black">
-      <label id='e-mail-login-label'type="email">E-mail<label><br>
-      <input id='email' type='text'><br><br>
-      <label id='password-login-label'>Senha<label><br>
-      <input id='password' type='password'><br><br>
-      <button id='entrar' type="submit">Login</button><br>
-      <br><br>
-      <p>Não tem uma Conta? <a>Entre Aqui!</a></p>
-      <br><br>
-      <button id='entrar-google'>Entrar com o Google</button><br><br>
-      <button id='entrar-facebook' >Entrar com o Facebook</button><br>
-    </form>
+  <form id="login-form">
+  <h2>login</h2>
+  <fieldset>
+    <input id='email' type='text' type="email" placeholder="email">
+  </fieldset>
+  <fieldset>
+    <input id='password' type='password' placeholder="password">
+  </fieldset>
+  <button id='entrar' type="submit">Login</button>
+  <div>Não tem uma Conta? <a href="#register">cadastre-se!</a></div>
+  <button id='entrar-google'>Entrar com o Google</button>
+  <button id='entrar-facebook'>Entrar com o Facebook</button>
+</form>
       `;
   container.innerHTML += template;
   return container;
