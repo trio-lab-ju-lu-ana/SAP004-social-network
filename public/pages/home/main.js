@@ -1,4 +1,4 @@
-export default () => {
+export const home =  () => {
   const container = document.createElement('div');
 
   const template = `
