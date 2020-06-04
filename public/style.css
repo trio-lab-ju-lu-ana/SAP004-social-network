@@ -82,6 +82,18 @@ footer {
     border:none;
 }
 
+.alert{
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 
 }
 
