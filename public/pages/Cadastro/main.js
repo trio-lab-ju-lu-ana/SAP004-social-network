@@ -42,6 +42,8 @@ export const signUp = () => {
     })
   }
 
+  console.log(handleSubmmit())
+
   container.addEventListener("submit", handleSubmmit)
 
 
