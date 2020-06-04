@@ -2,23 +2,23 @@ export const signUp = () => {
   const container = document.createElement('div');
 
   const template = `
-  <form id="register-form">
+  <div class="align"><form class="form" id="register-form">
   <h2 id='register'>Cadastro</h2>
-  <fieldset>
+  <fieldset class="textarea">
     <input id='first-name' type='text' placeholder="nome">
   </fieldset>
-  <fieldset>
+  <fieldset class="textarea">
     <input id='last-name' type='text' placeholder="sobrenome">
   </fieldset>
-  <fieldset>
+  <fieldset class="textarea">
     <input id='e-mail' type='text' placeholder="email">
   </fieldset>
-  <fieldset>
+  <fieldset class="textarea">
     <input id='password' type='text' placeholder="senha">
   </fieldset>
-  <button id='register-button' type="submit">Cadastrar!</button>
+  <button class="button-loguin id='register-button' type="submit">Cadastrar!</button>
   <div>já tem uma conta?<a href="#login">login</a></div>
-</form>
+</form></div>
       `
   container.innerHTML += template;
 
