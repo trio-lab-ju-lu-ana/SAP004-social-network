@@ -12,20 +12,20 @@ export const signUp = () => {
   <div class="align"><form class="form" id="register-form">
   <h2 id='register'>Cadastro</h2>
   <fieldset class="textarea">
-    <input id='first-name' type='text' placeholder="nome">
+    <input id='first-name' type='text' placeholder="Nome">
   </fieldset>
   <fieldset class="textarea">
-    <input id='last-name' type='text' placeholder="sobrenome">
+    <input id='last-name' type='text' placeholder="Sobrenome">
   </fieldset>
   <fieldset class="textarea">
-    <input id='e-mail' type='email' placeholder="email" required>
+    <input id='e-mail' type='email' placeholder="E-mail" required>
   </fieldset>
   <fieldset class="textarea">
-    <input id='password' type='password' placeholder="senha" required>
+    <input id='password' type='password' placeholder="Senha" required>
   </fieldset>
   <button class="button-loguin id='register-button' type="submit">Cadastrar!</button>
   <div class="alert hidden">usuario já registrado</div>
-  <div>já tem uma conta?<a href="#login">login</a></div>
+  <div>já tem uma conta?<a href="#login">Login</a></div>
 </form>
 </div>
       `
