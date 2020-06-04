@@ -1,3 +1,5 @@
+import {logout} from "./data.js"
+
 export const feed =  () => {
   const container = document.createElement('div');
   const template = `
@@ -5,7 +7,7 @@ export const feed =  () => {
   <nav>
     <ul style='display:flex; justify-content:space-between;'>
       <li><a style='text-decoration: none;' href='#profile'>Profile</a></li>
-      <li><a style='text-decoration: none;' href='#logout'>Logout</a></li>
+      <li><a style='text-decoration: none;' id="logout">Logout</a></li>
     </ul>
   </nav>
 </header>
@@ -25,5 +27,11 @@ export const feed =  () => {
 </main>
         `;
   container.innerHTML += template;
+
+  const logoutUser = container.querySelector("#logout")
+
+  logoutUser.addEventListener("click",logout)
+
+
   return container;
 };

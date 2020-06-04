@@ -1,5 +1,9 @@
-import {addNewUser} from "./data.js"
-import {handleFirebaseError} from "../../utils/errorHandler.js"
+import {
+  addNewUser
+} from "./data.js"
+import {
+  handleFirebaseError
+} from "../../utils/errorHandler.js"
 
 export const signUp = () => {
   const container = document.createElement('div');
@@ -34,6 +38,7 @@ export const signUp = () => {
     e.preventDefault()
     const email = signUpForm["e-mail"].value
     const password = signUpForm["password"].value
+
     addNewUser(email, password).then(() => {
       window.location.hash = "#feed"
     }).catch((error) => {
@@ -41,6 +46,8 @@ export const signUp = () => {
       handleFirebaseError(error, errorAlert)
     })
   }
+
+
 
   container.addEventListener("submit", handleSubmmit)
 
