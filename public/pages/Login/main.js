@@ -10,18 +10,19 @@ export const login = () => {
 
   const template = `
   <div class="align"><form class="form"  id="login-form">
-  <h2>login</h2>
+  <h2>Login</h2>
   <fieldset class="textarea">
-    <input id='email' type='text' type="email" placeholder="email">
+    <input  id='email' type='text' type="email" placeholder="E-mail">
   </fieldset>
   <fieldset class="textarea">
-    <input id='password' type='password' placeholder="password">
+    <input id='password' type='password' placeholder="Password">
   </fieldset>
   <button class="button-loguin" id='entrar' type="submit">Login</button>
   <div class="alert hidden">login ou senha incorretos</div>
-  <div>Não tem uma Conta? <a href="#register">cadastre-se!</a></div><br>
-  <button class="button-google"  id='entrar-google'>Entrar com o Google</button><br>
-  <button class="button-face"  id='entrar-facebook'>Entrar com o Facebook</button>
+  <div>Não tem uma Conta? <a href="#register">Cadastre-se!</a></div>
+  <div><p> Ou logue com:</p></div>
+  <button class="button"><i class="fab fa-2x  fa-google"></i></button><br>
+  <button class="button"><i class="fab fa-2x fa-facebook"></i></button>
 </form>
 </div>
       `;
