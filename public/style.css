@@ -82,6 +82,18 @@ footer {
     border:none;
 }
 
+.alert{
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 
 }
 
@@ -163,6 +175,19 @@ footer {
         width: 200px;;
         border:none;
     }
+
+    .alert{
+        color: red;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .show {
+        display: block;
+    }
+    
     
     
     }

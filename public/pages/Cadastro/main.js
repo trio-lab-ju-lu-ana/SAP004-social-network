@@ -1,3 +1,10 @@
+import {
+  addNewUser
+} from "./data.js"
+import {
+  handleFirebaseError
+} from "../../utils/errorHandler.js"
+
 export const signUp = () => {
   const container = document.createElement('div');
 
@@ -11,17 +18,38 @@ export const signUp = () => {
     <input id='last-name' type='text' placeholder="sobrenome">
   </fieldset>
   <fieldset class="textarea">
-    <input id='e-mail' type='text' placeholder="email">
+    <input id='e-mail' type='email' placeholder="email" required>
   </fieldset>
   <fieldset class="textarea">
-    <input id='password' type='text' placeholder="senha">
+    <input id='password' type='password' placeholder="senha" required>
   </fieldset>
   <button class="button-loguin id='register-button' type="submit">Cadastrar!</button>
+  <div class="alert hidden">usuario já registrado</div>
   <div>já tem uma conta?<a href="#login">login</a></div>
-</form></div>
+</form>
+</div>
       `
   container.innerHTML += template;
 
+  const signUpForm = container.querySelector("#register-form")
+  const errorAlert = container.querySelector(".alert")
+
+  const handleSubmmit = (e) => {
+    e.preventDefault()
+    const email = signUpForm["e-mail"].value
+    const password = signUpForm["password"].value
+
+    addNewUser(email, password).then(() => {
+      window.location.hash = "#feed"
+    }).catch((error) => {
+
+      handleFirebaseError(error, errorAlert)
+    })
+  }
+
+
+
+  container.addEventListener("submit", handleSubmmit)
 
 
   return container;

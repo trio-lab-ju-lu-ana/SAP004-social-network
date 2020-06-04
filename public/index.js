@@ -1,6 +1,7 @@
 import {login}  from './pages/Login/main.js';
-//import Home from './pages/Home/main.js';
+import {feed} from './pages/Feed/main.js'
 import {signUp} from './pages/Cadastro/main.js';
+//import Home from './pages/Home/main.js';
 
 const root = document.querySelector('#root');
 
@@ -20,6 +21,12 @@ const renderRoute = (root,route,title) => {
         route: "register",
         html: signUp(),
         title: "Cadastro"
+    },
+    {
+        route: "feed",
+        html: feed(),
+        title: "Feed",
+        private: true
     },
    
 ]
