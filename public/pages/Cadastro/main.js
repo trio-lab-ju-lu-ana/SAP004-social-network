@@ -30,7 +30,9 @@ export const signUp = () => {
     e.preventDefault()
     const email = signUpForm["e-mail"].value
     const password = signUpForm["password"].value
-    addNewUser(email,password)
+    addNewUser(email,password).then(()=>{
+      window.location.hash = "#feed"
+    })
   }
 
   container.addEventListener("submit",handleSubmmit)
