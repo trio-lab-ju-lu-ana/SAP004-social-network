@@ -1,0 +1,169 @@
+body{
+    background-color:#09070e ;
+    color: #ffffff ;
+}
+
+@media (max-width: 600px) {
+a:hover,
+a {
+  color:#C2B9CA;
+  font-size: 1.2em;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: small;
+ }
+
+ .align{
+     display: flex;
+     flex-direction: column-reverse;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+ }
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: #09070e;
+    width: 350px;
+    margin: 20px;
+    height: 600px;
+    line-height: 35px;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    
+    
+}
+
+.textarea{
+    background-color: #09070e;
+    border: none;
+    width: 200px;
+    padding: 5px;
+    height: 40px;
+  
+}
+
+.button-face{
+    background-color:#4267B2;
+    color: #ffffff;
+    background-image: url("images/facebook.png");
+    background-repeat: no-repeat; 
+    background-size:26px ;
+    height: 30px;
+    width: 200px;;
+    border:none;
+}
+
+.button-loguin{
+    background-color: #47366d;
+    color: #ffffff;
+    border: none;
+    width: 70px;
+    height: 40px;
+    border-radius: 15%;
+    
+}
+
+.button-google{
+    background-image: url("images/google.png");
+    background-repeat: no-repeat; 
+    background-size:26px ;
+    height: 30px;
+    width: 200px;;
+    border:none;
+}
+
+
+}
+
+@media only screen and (min-width: 601px) { 
+    a:hover,
+    a {
+      color:#C2B9CA;
+      font-size: 1.2em;
+    }
+    
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        text-align: center;
+        font-size: small;
+     }
+    
+     .align{
+         display: flex;
+         flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+        align-self: center;
+     }
+    
+    .form{
+        display: flex;
+        flex-direction: column;
+        background-color: #09070e;
+        width: 350px;
+        margin: 20px;
+        height: 600px;
+        line-height: 35px;
+        text-align: center;
+        align-items: center;
+        align-self: center;
+        
+        
+    }
+    
+    .textarea{
+        background-color: #09070e;
+        border: none;
+        width: 200px;
+        padding: 15px;
+        height: 40px;
+      
+    }
+    
+    .button-face{
+        background-color:#4267B2;
+        color: #ffffff;
+        background-image: url("images/facebook.png");
+        background-repeat: no-repeat; 
+        background-size:23px ;
+        height: 25px;
+        width: 200px;;
+        border:none;
+    }
+    
+    .button-loguin{
+        background-color: #47366d;
+        color: #ffffff;
+        border: none;
+        width: 70px;
+        height: 30px;
+        border-radius: 15%;
+        
+    }
+    
+    .button-google{
+        background-image: url("images/google.png");
+        background-repeat: no-repeat; 
+        background-size:23px ;
+        height: 25px;
+        width: 200px;;
+        border:none;
+    }
+    
+    
+    }
+

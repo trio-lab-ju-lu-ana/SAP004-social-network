@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gaming Social Network</title>
+</head>
+
+<body>
+
+  <main>
+    <div id="root"></div>
+  </main>
+
+  <footer>
+    <!-- a footer goes here -->
+    <p>© Copyright 2020 Rede Social XXX. All rights reserved.</p>
+  </footer>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first-->
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+
+  <!--TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyA37JKjlt1kuM-v8Nxouk6nV1607ALIZ2A",
+      authDomain: "rede-social-2db80.firebaseapp.com",
+      databaseURL: "https://rede-social-2db80.firebaseio.com",
+      projectId: "rede-social-2db80",
+      storageBucket: "rede-social-2db80.appspot.com",
+      messagingSenderId: "372588141619",
+      appId: "1:372588141619:web:afe665a14a04cce6acd746",
+      measurementId: "G-7RFYFD6JJM"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const auth = firebase.auth()
+    const data_base = firebase.firestore()
+  </script>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
