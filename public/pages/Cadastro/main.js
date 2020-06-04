@@ -1,3 +1,5 @@
+import {addNewUser} from "./data.js"
+
 export const signUp = () => {
   const container = document.createElement('div');
 
