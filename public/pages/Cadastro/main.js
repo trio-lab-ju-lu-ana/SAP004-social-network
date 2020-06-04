@@ -21,8 +21,8 @@ export const signUp = () => {
   </fieldset>
   <button class="button-loguin id='register-button' type="submit">Cadastrar!</button>
   <div class="alert hidden">usuario já registrado</div>
+  <div>já tem uma conta?<a href="#login">login</a></div>
 </form>
-<div>já tem uma conta?<a href="#login">login</a></div>
 </div>
       `
   container.innerHTML += template;
