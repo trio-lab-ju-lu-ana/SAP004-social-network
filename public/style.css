@@ -1,6 +1,17 @@
 body{
     background-color:#09070e ;
     color: #ffffff ;
+    font-family: "Roboto", sans-serif;
+}
+
+h2{
+    font-family:"Orbitron", sans-serif;;
+}
+
+input{
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
 }
 
 @media (max-width: 600px) {
@@ -52,35 +63,32 @@ footer {
   
 }
 
-.button-face{
-    background-color:#4267B2;
-    color: #ffffff;
-    background-image: url("images/facebook.png");
-    background-repeat: no-repeat; 
-    background-size:26px ;
-    height: 30px;
-    width: 200px;;
-    border:none;
+button{
+    border-radius: 55%;
+    border: none;
+    font-size:1.0em;
+  
+}
+
+button:hover{
+    background-image: radial-gradient(circle, #47366d, #3e2f5f, #352851, #2c2144, #241b37);
 }
 
 .button-loguin{
-    background-color: #47366d;
-    color: #ffffff;
-    border: none;
-    width: 70px;
-    height: 40px;
-    border-radius: 15%;
+  background-color: #47366d;
+  color: #ffffff;
+  border-radius: 41px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 15px 23px;
+  text-shadow: -2px 2px 3px black;
+  box-shadow: 2px 2px black;
+  
+    
     
 }
 
-.button-google{
-    background-image: url("images/google.png");
-    background-repeat: no-repeat; 
-    background-size:26px ;
-    height: 30px;
-    width: 200px;;
-    border:none;
-}
 
 .alert{
     color: red;
@@ -127,9 +135,9 @@ footer {
         flex-direction: column;
         background-color: #09070e;
         width: 350px;
-        margin: 20px;
+        margin: 25px;
         height: 600px;
-        line-height: 35px;
+        line-height: 45px;
         text-align: center;
         align-items: center;
         align-self: center;
@@ -146,35 +154,32 @@ footer {
       
     }
     
-    .button-face{
-        background-color:#4267B2;
-        color: #ffffff;
-        background-image: url("images/facebook.png");
-        background-repeat: no-repeat; 
-        background-size:23px ;
-        height: 25px;
-        width: 200px;;
-        border:none;
+    button{
+        border-radius: 55%;
+        border: none;
+        font-size:1.0em;
+      
     }
+    
+    button:hover{
+        background-image: radial-gradient(circle, #47366d, #3e2f5f, #352851, #2c2144, #241b37);
+    }
+    
+  
     
     .button-loguin{
-        background-color: #47366d;
-        color: #ffffff;
-        border: none;
-        width: 70px;
-        height: 30px;
-        border-radius: 15%;
+         background-color: #47366d;
+         color: #ffffff;
+         border-radius: 41px;
+         display: inline-block;
+         cursor: pointer;
+         font-size: 14px;
+         padding: 15px 23px;
+         text-shadow: -2px 2px 3px black;
+         box-shadow: 2px 2px black;
         
     }
-    
-    .button-google{
-        background-image: url("images/google.png");
-        background-repeat: no-repeat; 
-        background-size:23px ;
-        height: 25px;
-        width: 200px;;
-        border:none;
-    }
+  
 
     .alert{
         color: red;
