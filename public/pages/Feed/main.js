@@ -23,6 +23,10 @@ export const feed =  () => {
         <textarea placeholder="Qual é a fanfic de hoje?" style="width: 500px; height: 80px;"></textarea>
       </form>
     </div>
+    <button  class="button"><i class="far fa-paper-plane"></i></button>
+    <button  class="button"><i class="far fa-star"></i></button>
+    <button  class="button"><i class="fas fa-share-square"></i></button>
+</form>
   </div>
 </main>
         `;
