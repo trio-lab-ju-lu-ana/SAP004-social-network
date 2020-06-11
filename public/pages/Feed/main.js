@@ -1,4 +1,6 @@
-import {logout} from './data.js';
+import {
+  logout
+} from './data.js';
 
 export const feed = () => {
   const container = document.createElement('div');
@@ -104,6 +106,26 @@ export const feed = () => {
   container.innerHTML += template;
   const logoutUser = container.querySelector('#logout');
   logoutUser.addEventListener('click', logout);
+
+  const logoutUser = feedContainer.querySelector("#logout")
+  const feedForm = feedContainer.querySelector("#my-feed")
+  const allPosts = feedContainer.querySelector("#all-posts")
+
+  logoutUser.addEventListener('click', logout)
+
+
+  const handlePostSubmit = (e) => {
+    e.preventDefault()
+    const postContent = feedForm["post-input"].value
+    creatAPost(postContent)
+  }
+
+  renderAllPosts(allPosts)
+
+
+  feedForm.addEventListener("submit", handlePostSubmit)
+
+
 
 
   return container;
