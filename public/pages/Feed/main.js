@@ -1,8 +1,4 @@
-import {
-  logout,
-  creatAPost,
-  renderAllPosts
-} from './data.js';
+import { logout, creatAPost, renderAllPosts } from './data.js';
 
 export const feed = () => {
   const container = document.createElement('div');
