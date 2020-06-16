@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { logout} from './data.js';
+=======
+import {logout} from './data.js';
+>>>>>>> master
 
 export const profileUser = () => {
     const container = document.createElement('div');
