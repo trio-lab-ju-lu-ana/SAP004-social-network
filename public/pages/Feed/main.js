@@ -1,8 +1,4 @@
-import {
-  logout,
-  creatAPost,
-  renderAllPosts
-} from './data.js';
+import { logout, creatAPost, renderAllPosts } from './data.js';
 
 export const feed = () => {
   const container = document.createElement('div');
@@ -56,50 +52,11 @@ export const feed = () => {
         </form>
       </div>
     </div>
-    <div class='align-posts'>
-      <div class='container-created-post'>
-        <div class='container-info-post'>
-          <p>An user name and the post status go here</p>
-          <button class="button" title='Like'>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </button>
-        </div>
+    
+     
         <div id="all-posts" class='posted-message'>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada eros lorem, nec commodo justo.
-          Duis semper feugiat turpis, sed commodo nisi semper et. Maecenas et elit leo. Duis posuere elementum nulla vitae tempor.
-          Ut ut quam non odio dapibus facilisis. Nulla sagittis libero in felis consectetur ac consectetur erat accumsan.
-          Maecenas ut velit vel dui viverra vestibulum id a nunc.</p>
-        </div>
-        <div class='container-buttons'>
-            <button class="button" title='Like'>
-              <i class="far fa-star"></i>
-            </button>
-            <button class="button" title='Share'>
-              <i class="fas fa-share-square"></i>
-            </button>
-          </div>
-      </div>
-      <div class='container-created-post'>
-        <div class='container-info-post'>
-          <p>An user name and the post status go here</p>
-          <button class="button" title='Like'>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </button>
-        </div>
-        <div id="all-posts" class='posted-message'>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada eros lorem, nec commodo justo.
-          Duis semper feugiat turpis, sed commodo nisi semper et. Maecenas et elit leo. Duis posuere elementum nulla vitae tempor.
-          Ut ut quam non odio dapibus facilisis. Nulla sagittis libero in felis consectetur ac consectetur erat accumsan.
-          Maecenas ut velit vel dui viverra vestibulum id a nunc.</p>
-        </div>
-        <div class='container-buttons'>
-            <button class="button" title='Like'>
-              <i class="far fa-star"></i>
-            </button>
-            <button class="button" title='Share'>
-              <i class="fas fa-share-square"></i>
-            </button>
-          </div>
+         
+      
       </div>
     </div>
   </main>
