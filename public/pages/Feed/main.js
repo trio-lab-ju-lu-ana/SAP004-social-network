@@ -3,21 +3,34 @@ import { logout, creatAPost, renderAllPosts } from './data.js';
 export const feed = () => {
   const container = document.createElement('div');
   const template = `
-  <header class='header-feed'>  
+  <header class='header-feed'>
+    <input type='checkbox' id='check'>
+    <label id='icon' for='check'><img src='../images/menu-icon2.png'></label>
+    <div class='bar'>
+      <nav>
+        <a class='a-hamburger-menu' href=''><div class='link'>Profile</div></a>
+        <a class='a-hamburger-menu' href=''><div class='link'>Logout</div></a>
+      </nav>
+    </div>
+    
     <ul class='nav-feed'>
+
       <li class='li-elements'>
         <a class='nav-itens' href='#profile' title='Profile'>Profile</a>
       </li>
-      <li class='li-elements'>
-        <div class='container-logo-feed'>
-          <img class='logo-image-feed' src='../images/AthenaLogoRetangular.png' title='Athena Hideout' alt='Athena Hideout Logo'>
-        </div>
-      </li>
+
+      <div class='container-logo-feed'>
+        <img class='logo-image-feed' src='../images/AthenaLogoRetangular.png' title='Athena Hideout' alt='Athena Hideout Logo'>
+      </div>
+
       <li class='li-elements'>
         <a id='logout' class='nav-itens' title='Logout'>Logout</a>
       </li>
+
     </ul>
+  
   </header>
+
   <main>
     <div class='main-container'>
       <div class='container-image-photo-name'>
@@ -52,11 +65,7 @@ export const feed = () => {
         </form>
       </div>
     </div>
-    
-     
-        <div id="all-posts" class='posted-message'>
-         
-      
+      <div id="all-posts" class='posted-message'>
       </div>
     </div>
   </main>
@@ -64,25 +73,22 @@ export const feed = () => {
 
   container.innerHTML += template;
   const logoutUser = container.querySelector('#logout');
-  const feedForm = container.querySelector("#my-feed")
-  const allPosts = container.querySelector("#all-posts")
+  const feedForm = container.querySelector('#my-feed');
+  const allPosts = container.querySelector('#all-posts');
 
-  logoutUser.addEventListener('click', logout)
+  logoutUser.addEventListener('click', logout);
 
 
   const handlePostSubmit = (e) => {
-    e.preventDefault()
-    const postContent = feedForm["post-input"].value
-    creatAPost(postContent)
-  }
+    e.preventDefault();
+    const postContent = feedForm['post-input'].value;
+    creatAPost(postContent);
+  };
 
-  renderAllPosts(allPosts)
-
-
-  feedForm.addEventListener("submit", handlePostSubmit)
+  renderAllPosts(allPosts);
 
 
-
+  feedForm.addEventListener('submit', handlePostSubmit);
 
   return container;
 };

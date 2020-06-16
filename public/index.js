@@ -32,9 +32,9 @@ const routes = [{
 const handleRoutes = () => {
   const route = routes.find(({ route }) => window.location.hash === `#${route}`);
   if (!route) {
-    window.location.hash = '#register';
+    window.location.hash = '#login';
   } else if (route.private && !localStorage.getItem('user')) {
-    window.location.hash = '#register';
+    window.location.hash = '#login';
   } else {
     renderRoute(route.html, route.title);
   }
