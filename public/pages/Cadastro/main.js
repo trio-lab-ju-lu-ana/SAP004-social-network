@@ -13,7 +13,7 @@ export const signUp = () => {
       <form class="form" id="register-form">
         <h2 class='text-description-register' id='register'>Cadastre-se - É rápido!</h2>
         <fieldset class="textarea">
-          <input id='first-name' type='text' placeholder="Nome">
+          <input id='name' type='text' placeholder="Nome">
         </fieldset>
         <fieldset class="textarea">
           <input id='last-name' type='text' placeholder="Sobrenome">
@@ -40,12 +40,14 @@ export const signUp = () => {
     e.preventDefault();
     const email = signUpForm.userEmail.value;
     const password = signUpForm.userPassword.value;
+    const name = signUpForm.name.value;
 
-    addNewUser(email, password).then(() => {
+    addNewUser(email, password,name).then(() => {
       window.location.hash = '#feed';
     }).catch((error) => {
       handleFirebaseError(error, errorAlert);
     });
+    
   };
 
   container.addEventListener('submit', handleSubmmit);

@@ -1,3 +1,7 @@
+
+
+
+
 export const logout = (e) => {
   e.preventDefault();
   AUTH.signOut();
@@ -8,12 +12,36 @@ export const logout = (e) => {
 
 export const creatAPost = (text) => {
   DATA_BASE.collection("posts").add({
-      text:text
-  }).then((docs)=> {
+      text:text,
+      name: firebase.auth().currentUser.uid
+  })
+  .then((docs)=> {
       console.log("created with id:", docs.id)
   }).catch((error) =>{
       console.log("erro:", error)
   })
+  var user = firebase.auth().currentUser;
+
+  if (user != null) {
+    user.providerData.forEach(function (profile) {
+      console.log("Sign-in provider: " + profile.providerId);
+      console.log("  Provider-specific UID: " + profile.uid);
+      console.log("  Name: " + profile.displayName);
+      console.log("  Email: " + profile.email);
+      console.log("  Photo URL: " + profile.photoURL);
+    });
+  }
+}
+
+export const createUser = (email,Name) => {
+	const db = firebase.firestore();
+
+	db.collection("users").add({
+		Name:Name,
+	     email: email,
+        userUid: firebase.auth().currentUser.uid
+    });
+    return true
 }
 
 export const renderAllPosts = (feedContainer) => {
@@ -27,7 +55,7 @@ export const renderAllPosts = (feedContainer) => {
        <div>
       <div class='container-created-post'>
         <div class='container-info-post'>
-          <p>An user name and the post status go here</p>
+        <span id="userName">${firebase.auth().currentUser.displayName}</span>
           <button class="button" title='Like'>
             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
           </button>
@@ -45,4 +73,6 @@ export const renderAllPosts = (feedContainer) => {
           </div>
       </div>`).join("")
     })
+    
 }
+

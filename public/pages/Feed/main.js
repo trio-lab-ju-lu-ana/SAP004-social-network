@@ -1,4 +1,4 @@
-import { logout, creatAPost, renderAllPosts } from './data.js';
+import { logout, creatAPost, renderAllPosts} from './data.js';
 
 export const feed = () => {
   const container = document.createElement('div');
@@ -65,7 +65,7 @@ export const feed = () => {
         </form>
       </div>
     </div>
-      <div id="all-posts" class='posted-message'>
+      <div id="all-posts"  id="all-users" class='posted-message'>
       </div>
     </div>
   </main>
@@ -75,6 +75,7 @@ export const feed = () => {
   const logoutUser = container.querySelector('#logout');
   const feedForm = container.querySelector('#my-feed');
   const allPosts = container.querySelector('#all-posts');
+ 
 
   logoutUser.addEventListener('click', logout);
 
@@ -86,6 +87,7 @@ export const feed = () => {
   };
 
   renderAllPosts(allPosts);
+
 
 
   feedForm.addEventListener('submit', handlePostSubmit);
