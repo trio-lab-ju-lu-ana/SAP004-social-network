@@ -2,6 +2,7 @@ import { login } from './pages/Login/main.js';
 import { feed } from './pages/Feed/main.js';
 import { signUp } from './pages/Cadastro/main.js';
 import { profileUser } from './pages/User/main.js';
+
 // import Home from './pages/Home/main.js';
 
 const root = document.querySelector('#root');
