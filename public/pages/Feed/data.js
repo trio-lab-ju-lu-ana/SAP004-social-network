@@ -13,14 +13,15 @@ export const logout = (e) => {
 export const creatAPost = (text) => {
   DATA_BASE.collection("posts").add({
       text:text,
-      name: firebase.auth().currentUser.uid
+      name: firebase.auth().currentUser.displayName,
+      userUid: firebase.auth().currentUser.uid
   })
   .then((docs)=> {
       console.log("created with id:", docs.id)
   }).catch((error) =>{
       console.log("erro:", error)
   })
-  var user = firebase.auth().currentUser.uid;
+  var user = firebase.auth().currentUser;
 
   if (user != null) {
     user.providerData.forEach(function (profile) {
@@ -33,14 +34,13 @@ export const creatAPost = (text) => {
   }
 }
 
-export const createUser = (email,name) => {
+export const createUser = (email,Name) => {
 	const db = firebase.firestore();
 
 	db.collection("users").add({
-    userUid: firebase.auth().currentUser.uid,
-    name:userUid,
+		Name:Name,
 	     email: email,
-       
+        userUid: firebase.auth().currentUser.uid
     });
     return true
 }
@@ -56,13 +56,14 @@ export const renderAllPosts = (feedContainer) => {
        <div>
       <div class='container-created-post'>
         <div class='container-info-post'>
-        <span id="userName">${firebase.auth().currentUser.uid.displayName}</span>
+        <span id="userName">${post.name}</span>
           <button class="button" title='Like'>
             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
           </button>
         </div>
         <div id="all-posts" class='posted-message'>
         <p>${post.text}</p>
+       
         </div>
         <div class='container-buttons'>
             <button class="button" title='Like'>
