@@ -1,7 +1,3 @@
-
-
-
-
 export const logout = (e) => {
   e.preventDefault();
   AUTH.signOut();
