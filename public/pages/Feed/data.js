@@ -10,13 +10,15 @@ export const creatAPost = (text) => {
   DATA_BASE.collection("posts").add({
       text:text,
       name: firebase.auth().currentUser.displayName,
-      userUid: firebase.auth().currentUser.uid
+      userUid: firebase.auth().currentUser.uid,
+      likes: 0
   })
   .then((docs)=> {
       console.log("created with id:", docs.id)
   }).catch((error) =>{
       console.log("erro:", error)
   })
+ 
   var user = firebase.auth().currentUser;
 
   if (user != null) {
@@ -30,21 +32,22 @@ export const creatAPost = (text) => {
   }
 }
 
-export const createUser = (email,Name) => {
-	const db = firebase.firestore();
-
-	db.collection("users").add({
-		Name:Name,
-	     email: email,
-        userUid: firebase.auth().currentUser.uid
-    });
-    return true
-}
 
 export const renderAllPosts = (feedContainer) => {
     DATA_BASE.collection("posts").onSnapshot((querySnapshot)=>{
        let posts = []
-
+       const editLikes = (likes, id) => {
+        return firebase
+          .firestore()
+          .collection('posts')
+          .doc(id)
+          .update({
+            "likes": likes
+          })
+    
+      }
+      
+console.log(editLikes)
        querySnapshot.forEach((doc)=> {
            posts.push(doc.data());
        })
@@ -62,7 +65,8 @@ export const renderAllPosts = (feedContainer) => {
        
         </div>
         <div class='container-buttons'>
-            <button class="button" title='Like'>
+            <button id="like-button"   class="button" title='Like'>
+            <span id="numbers-like" class="like-cont">${post.likes}</span>
               <i class="far fa-star"></i>
             </button>
             <button class="button" title='Share'>
@@ -71,6 +75,8 @@ export const renderAllPosts = (feedContainer) => {
           </div>
       </div>`).join("")
     })
-    
-}
+  }
+
+
+
 
