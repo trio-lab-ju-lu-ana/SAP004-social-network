@@ -4,12 +4,12 @@ export const feed = () => {
   const container = document.createElement('div');
   const template = `
   <header class='header-feed'>
-    <input type='checkbox' id='check'>
-    <label id='icon' for='check'><img src='../images/menu-icon2.png'></label>
+    <input class='check' type='checkbox' id='check'>
+    <label class='image' id='icon' for='check'><img src='../images/menu-icon2.png'></label>
     <div class='bar'>
       <nav>
-        <a class='a-hamburger-menu' href=''><div class='link'>Profile</div></a>
-        <a class='a-hamburger-menu' href=''><div class='link'>Logout</div></a>
+        <a class='a-hamburger-menu' href='#profile'><div class='link'>Profile</div></a>
+        <a class='a-hamburger-menu' href='#login'><div class='link'>Logout</div></a>
       </nav>
     </div>
     
@@ -44,7 +44,7 @@ export const feed = () => {
             </div>
           </div>
         <div class='container-name'>
-          <p class='element-identifier'>Name</p>
+          <p class='element-identifier'>${firebase.auth().providerId}</p>
           <p class='element-identifier'>Nick</p>
         </div>
       </div>
@@ -75,6 +75,7 @@ export const feed = () => {
   const logoutUser = container.querySelector('#logout');
   const feedForm = container.querySelector('#my-feed');
   const allPosts = container.querySelector('#all-posts');
+  
  
 
   logoutUser.addEventListener('click', logout);

@@ -5,19 +5,29 @@ export const profileUser = () => {
   
     const template = `
     <header class='header-feed'>
+    <input class='check' type='checkbox' id='check'>
+    <label class='image' id='icon' for='check'><img src='../images/menu-icon2.png'></label>
+    <div class='bar'>
+      <nav>
+        <a class='a-hamburger-menu' href='#feed'><div class='link'>Home</div></a>
+        <a class='a-hamburger-menu' href='#login'><div class='link'>Logout</div></a>
+      </nav>
+    </div>
+    
     <ul class='nav-feed'>
+
       <li class='li-elements'>
-        <a class='nav-itens' href='#feed' title='Home'>Home</a>
+        <a class='nav-itens' href='#feed' title='Profile'>Home</a>
       </li>
-      <li class='li-elements'>
-        <div class='container-logo-feed'>
-          <img class='logo-image-feed' src='../images/AthenaLogoRetangular.png' title='Athena Hideout'
-            alt='Athena Hideout Logo'>
-        </div>
-      </li>
+
+      <div class='container-logo-feed'>
+        <img class='logo-image-feed' src='../images/AthenaLogoRetangular.png' title='Athena Hideout' alt='Athena Hideout Logo'>
+      </div>
+
       <li class='li-elements'>
         <a id='logout' class='nav-itens' title='Logout'>Logout</a>
       </li>
+
     </ul>
   </header>
   <main>

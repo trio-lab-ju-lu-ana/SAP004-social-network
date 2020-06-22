@@ -11,6 +11,10 @@ body {
     height: 100vh;
 }
 
+li{
+    list-style-type:none;
+}
+
 h2 {
     font-family: "Orbitron", sans-serif;
 }
@@ -41,7 +45,9 @@ input {
     } */
 
 /* Login e Cadastro -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
-    
+.check{
+    display: none;
+}
     .align-items-login {
         display: flex;
         flex-direction: column;
@@ -55,7 +61,7 @@ input {
         justify-content: center;
         flex-direction: column;
         width: 30%;
-        height: 20vh;
+        height: 30px;
         margin: 0 auto;
     }
 
@@ -133,10 +139,6 @@ input {
         margin-bottom: 1%;
     }
 
-    button:hover {
-        background-image: radial-gradient(circle, #47366d, #3e2f5f, #352851, #2c2144, #241b37);
-    }
-
     .button-login {
         background-color: #47366d;
         color: #ffffff;
@@ -165,18 +167,6 @@ input {
 
     /* Feed Page -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
-    body::-webkit-scrollbar {
-        width: 1em;
-    }
-        
-    body::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    }
-        
-    body::-webkit-scrollbar-thumb {
-        background-color: rgba(30, 80, 200, 0.25);
-        outline: 1px solid slategrey;
-    }
     
 
     /* Hamburguer Menu -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -198,6 +188,7 @@ input {
         height: 100%;
         width: 40%;
         position: absolute;
+        top: 20%;
         transition: all .2s linear;
         left: -200px;
         opacity: 0.8;
@@ -207,13 +198,21 @@ input {
     nav {
         width: 100%;
         position: absolute;
-        top: 5%;
+        top:10%;
+       
     }
 
     .a-hamburger-menu {
         text-decoration: none;
         font-size: 0.9em;
         color: rgb(158, 152, 152);
+       
+    }
+
+    .image{
+        position:absolute;
+        top:3%;
+        right: 80%;
     }
 
     .link {
@@ -224,6 +223,7 @@ input {
         transition: all .2s linear;
         color: #fb0094;
         border-bottom: 2px solid #090413;
+        line-height: 100px;
         /* margin-top: 5%; */
     }
 
@@ -233,42 +233,26 @@ input {
 
     #check:checked ~ .bar {
         transform: translateX(200px);
+        
     }
 
     #check:checked ~ .bar nav .a-hamburger-menu .link  {
         opacity: 1;
         margin-top: 0;
         transition-delay: .2s;
+      
     }
 
     /* Tradicional Menu -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */    
 
-    .header-feed {
-        width: 100%;
-        height: 17vh;
-        background-color: #120f1b;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        top: 0;
-        /* border: 1px solid orangered; */
-    }
+   
 
-    a {
-        display: none;
-    }
-
-    .container-logo-feed {
-        display: flex;
-        justify-content: center;
-        width: 60%;
-        height: 60%;
-    }
 
     .logo-image-feed {
         cursor: pointer;
-        width: 100%;
-        height: 100%;
+        width: 70%;
+        margin-left:11%;
+        height: 30%;
         border-radius: 5px;
     }
 
@@ -288,8 +272,11 @@ input {
         flex-direction: row;
         width: 70%; 
         height: 35%;
-        margin-bottom: 5%;
+        margin-top: 15%;
+        margin-bottom: 15%;
+        margin-left: 15%;
         border: 1px solid #fb0094;
+        box-shadow: 2px 2px 2px 2px #FFEBF7, 4px 4px 4px 4px #FF85CC, 2px 2px 2px #FFEBF7;
         border-radius: 5px;
     }
    
@@ -300,7 +287,7 @@ input {
     .container-photo-name {
         display: flex;
         flex-direction: row;
-        border: 1px solid #fb0094;
+        background-color: #110E1B;
         border-radius: 5px;
         width: 100%;
         height: 100%;
@@ -308,21 +295,23 @@ input {
 
     .container-photo {
         display: flex;
+        
         justify-content: center;
-        border: 1px solid #fb0094;
         border-radius: 5px;
         width: 50%; 
         height: 15vh;
     }
 
     .photo-area {
-        border: 1px solid #fb0094;
+
+        background-color: #191528;
         border-radius: 50%;
     }
 
     .container-name {
-        border: 1px solid #fb0094;
+        background-color: #110E1B;
         border-radius: 5px;
+        font-family: "Orbitron", sans-serif;
         width: 60%; 
         height: 100%;
     }
@@ -334,9 +323,12 @@ input {
 
     .container-post {
         border: 2px solid #fb0094;
+        box-shadow: 2px 2px 2px 2px #FFEBF7, 4px 4px 4px 4px #FF85CC, 2px 2px 2px #FFEBF7;
         background-color: #241b37;
         border-radius: 5px;
-        width: 100%;
+        width: 80%;
+        margin-left: 10%;
+        
     }
 
     .form-feed {
@@ -349,12 +341,19 @@ input {
         margin-top: 2%;
         margin-right: 1%;
         width: 90%;
+        height: 100px;
+        
+
     }
 
     .text-area {
         border-radius: 5px;
         width: 100%; 
         height: 100%;
+    }
+
+    .nav-itens{
+        display: none;
     }
 
     .buttons-area {
@@ -372,13 +371,16 @@ input {
 
     .container-created-post {
         border: 1px solid #fb0094;
+        box-shadow: 2px 2px 2px 2px #FFEBF7, 4px 4px 4px 4px #FF85CC, 2px 2px 2px #FFEBF7;
         border-radius: 5px;
         display: flex;
         justify-self: center;
         flex-direction: column;
         margin-top: 8%;
         margin-bottom: 8%;
-        width: 100%;
+        width: 80%;
+        margin-left: 10%;
+        height: 100px;
     }
 
     .container-info-post {
@@ -400,10 +402,12 @@ input {
 
     .container-buttons {
         border: 1px solid #fb0094;
+        box-shadow: 2px 2px 2px 2px #FFEBF7, 4px 4px 4px 4px #FF85CC, 2px 2px 2px #FFEBF7;
         border-radius: 5px;
         background-color: #241b37;
         padding-left: 1%;
     }
+
 
 }
 
@@ -562,66 +566,19 @@ input {
         outline: 1px solid slategrey;
     }
     
-    /* Hamburguer Menu -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
-
-    #check {
+   
+    /* Tradicional Menu -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+    .link{
         display: none;
     }
 
-    #icon {
-        cursor: pointer;
-        padding: 2%;
-        position: absolute;
-        z-index: 1;
+    .check{
+        display: none;
     }
 
-    .bar {
-        background-color: #120f1b;
-        height: 100%;
-        width: 15%;
-        position: absolute;
-        transition: all .2s linear;
-        left: -200px;
-        opacity: 0.8;
+    .image{
+        display:none;
     }
-
-    nav {
-        width: 100%;
-        position: absolute;
-        top: 12%;
-    }
-    
-    .a-hamburger-menu {
-        text-decoration: none;
-    }
-
-    .link {
-        background-color: #0c0618;
-        padding-left: 8%;
-        padding-bottom: 4%;
-        font-size: 1.1em;
-        transition: all .2s linear;
-        color: #fb0094;
-        border-bottom: 2px solid #090413;
-        margin-top: 5%;
-    }
-
-    .link:hover {
-        background-color: #090413; 
-    }
-    
-    #check:checked ~ .bar {
-        transform: translateX(200px);
-    }
-
-    #check:checked ~ .bar nav .a-hamburger-menu .link  {
-        opacity: 1;
-        margin-top: 0;
-        transition-delay: .2s;
-    }
-
-    /* Tradicional Menu -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-
     a {
         color: rgb(131, 162, 163);
         font-size: 1.2em;
