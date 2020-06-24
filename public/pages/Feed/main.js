@@ -66,6 +66,7 @@ export const feed = () => {
       </div>
     </div>
       <div id="all-posts"  id="all-users" class='posted-message'>
+      
       </div>
     </div>
   </main>
@@ -75,6 +76,7 @@ export const feed = () => {
   const logoutUser = container.querySelector('#logout');
   const feedForm = container.querySelector('#my-feed');
   const allPosts = container.querySelector('#all-posts');
+  
   
  
 
@@ -88,6 +90,7 @@ export const feed = () => {
   };
 
   renderAllPosts(allPosts);
+
 
 
 

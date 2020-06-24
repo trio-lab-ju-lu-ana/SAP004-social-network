@@ -32,22 +32,30 @@ export const creatAPost = (text) => {
   }
 }
 
+function getLike(ref) {
+  return ref.collection('posts').get().then(snapshot => {
+      let total_likes = 0;
+      snapshot.forEach(doc => {
+          total_likes += doc.data().likes;
+      });
+      
+
+      return total_likes;
+  });
+  
+}
+
+
 
 export const renderAllPosts = (feedContainer) => {
     DATA_BASE.collection("posts").onSnapshot((querySnapshot)=>{
        let posts = []
-       const editLikes = (likes, id) => {
-        return firebase
-          .firestore()
-          .collection('posts')
-          .doc(id)
-          .update({
-            "likes": likes
-          })
+       let likes = []
+  
+       querySnapshot.forEach((doc)=> {
+           likes.push(doc.data());
+       })
     
-      }
-      
-console.log(editLikes)
        querySnapshot.forEach((doc)=> {
            posts.push(doc.data());
        })
@@ -62,7 +70,6 @@ console.log(editLikes)
         </div>
         <div id="all-posts" class='posted-message'>
         <p>${post.text}</p>
-       
         </div>
         <div class='container-buttons'>
             <button id="like-button"   class="button" title='Like'>
@@ -75,8 +82,15 @@ console.log(editLikes)
           </div>
       </div>`).join("")
     })
-  }
+  
+   
+     
+    };
+ 
 
-
+console.log(getLike)
+ 
+  
+  
 
 
