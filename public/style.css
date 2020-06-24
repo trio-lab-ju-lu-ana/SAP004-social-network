@@ -27,6 +27,10 @@ input {
     font-family: "Orbitron", sans-serif;
 }
 
+.full-height {
+    height: 100%;
+}
+
 .container-created-post,
 .container-post,
 .container-image-photo-name,
@@ -53,9 +57,10 @@ input {
     } */
 
 /* Login e Cadastro -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
-.check{
-    display: none;
-}
+    .check {
+        display: none;
+    }
+
     .align-items-login {
         display: flex;
         flex-direction: column;
@@ -78,7 +83,9 @@ input {
         margin: 0 auto;
     }
 
+
     .logo-login:hover {
+        box-shadow: 5px 3px 15px 10px #FFEBF7, 5px 3px 6px 10px #FF85CC, 5px 3px 15px 10px #FFEBF7;
         border: 1px solid #fb0094;
         max-width: 100%;
         cursor: pointer;
@@ -217,7 +224,7 @@ input {
        
     }
 
-    .image{
+    .image {
         position:absolute;
         top:3%;
         right: 80%;
@@ -241,20 +248,15 @@ input {
 
     #check:checked ~ .bar {
         transform: translateX(200px);
-        
     }
 
     #check:checked ~ .bar nav .a-hamburger-menu .link  {
         opacity: 1;
         margin-top: 0;
         transition-delay: .2s;
-      
     }
 
     /* Tradicional Menu -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */    
-
-   
-
 
     .logo-image-feed {
         cursor: pointer;
@@ -301,7 +303,6 @@ input {
 
     .container-photo {
         display: flex;
-        
         justify-content: center;
         border-radius: 5px;
         width: 50%; 
@@ -309,7 +310,6 @@ input {
     }
 
     .photo-area {
-
         background-color: #191528;
         border-radius: 50%;
     }
@@ -333,7 +333,6 @@ input {
         border-radius: 5px;
         width: 80%;
         margin-left: 10%;
-        
     }
 
     .form-feed {
@@ -347,8 +346,6 @@ input {
         margin-right: 1%;
         width: 90%;
         height: 100px;
-        
-
     }
 
     .text-area {
@@ -357,7 +354,7 @@ input {
         height: 100%;
     }
 
-    .nav-itens{
+    .nav-itens {
         display: none;
     }
 
@@ -365,6 +362,51 @@ input {
         display: flex;
         justify-content: space-between;
     }
+
+    .button-attach {
+        background-image: url("../images/anexar6.png");
+	    background-position: center;
+        border-radius: 50%;
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .button-attach::-webkit-file-upload-button {
+        visibility: hidden;
+    }
+    
+    .container-attached-image {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        margin-bottom: 10px;
+        visibility: hidden;
+    }
+
+    .remove-image {
+        background-image: url("../images/delete-sign2.png");
+        width: 10%;
+        height: 4vh;
+        cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .selected-image {
+        max-width: 91%;
+        max-height: 100%;
+        width: 34vw;
+        height: 8vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid red;
+        cursor: pointer;
+        object-fit: scale-down;
+    }
+
 
     /* Post Area -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
     
@@ -398,7 +440,6 @@ input {
     }
 
     .posted-message {
-        /* border: 1px solid green; */
         border-radius: 5px;
         padding-right: 2%;
         padding-left: 2%;
@@ -434,7 +475,6 @@ input {
         flex-direction: row;
         width: 100%;
         height: 100%;
-        /* border: 1px solid green; */
     }
 
     .align-logo {
@@ -444,7 +484,6 @@ input {
         width: 30%;
         height: 80vh;
         margin-top: 5%;
-        /* border: 1px solid red; */
     }
 
     .logo-login {
@@ -454,11 +493,9 @@ input {
 
     .logo-login:hover {
         border: 1px solid #fb0094;
-        
         max-width: 100%;
         cursor: pointer;
         margin: 0 auto;
-        /* box-shadow: 12px 12px 5px 0px #fb0094; */
     }
 
     .container-description {
@@ -487,7 +524,6 @@ input {
         align-self: center;
         width: 30%;
         height: 80vh;
-        /* border: 1px solid yellow;  */
         margin-top: 5%;
     }
     
@@ -572,7 +608,7 @@ input {
     
    
     /* Tradicional Menu -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-    .link{
+    .link {
         display: none;
     }
 
@@ -580,9 +616,10 @@ input {
         display: none;
     }
 
-    .image{
+    .image {
         display:none;
     }
+
     a {
         color: rgb(131, 162, 163);
         font-size: 1.2em;
@@ -606,7 +643,6 @@ input {
         flex-direction: row;
         justify-content: center;
         top: 0;
-        /* border: 1px solid orangered; */
     }
 
     .nav-feed {
@@ -650,7 +686,6 @@ input {
         display: flex;
         justify-content: center;
         margin-top: 50px;
-        /* border: 1px solid blueviolet; */
     }
 
     .container-image-photo-name {
@@ -668,7 +703,6 @@ input {
     }
 
     .container-image {
-        
         border-radius: 5px;
         width: 100%; 
         height: 55%;
@@ -685,7 +719,6 @@ input {
     .container-photo {
         display: flex;
         justify-content: center;
-      
         border-radius: 5px;
         width: 40%; 
         height: 100%;
@@ -735,6 +768,55 @@ input {
         justify-content: space-between;
     }
 
+    .button-attach {
+        background-image: url("../images/anexar6.png");
+        /* background-attachment: fixed; */
+	    background-position: center;
+	    /* background-repeat: no-repeat; */
+	    /* background-size: cover; */
+        /* background-color: purple; */
+        border-radius: 50%;
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .button-attach::-webkit-file-upload-button {
+        visibility: hidden;
+    }
+    
+    .container-attached-image {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 10%;
+        border: 1px solid green;
+        margin-bottom: 10px;
+        visibility: hidden;
+    }
+
+    .remove-image {
+        background-image: url("../images/delete-sign2.png");
+        width: 10%;
+        height: 4vh;
+        cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .selected-image {
+        max-width: 90%;
+        max-height: 100%;
+        width: 34vw;
+        height: 8vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid red;
+        cursor: pointer;
+        object-fit: scale-down;
+    }
+
     /* Post Area -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
     .align-posts {
@@ -746,7 +828,6 @@ input {
     .container-created-post {
         border: 1px solid #fb0094;
         border-radius: 5px;
-        /* background-color: #241b37; */
         display: flex;
         justify-self: center;
         flex-direction: column;
@@ -767,7 +848,6 @@ input {
     }
 
     .posted-message {
-        /* border: 1px solid green; */
         border-radius: 5px;
         padding-right: 10px;
         padding-left: 10px;
@@ -780,5 +860,97 @@ input {
         padding-left: 10px;
     }
 
- 
+    /* Profile Page -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+    .header-profile {
+        width: 100%;
+        height: 100%;
+        background-color: #120f1b;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        top: 0;
+    }
+
+    .nav-profile {
+        width: 100%;
+        display: flex; 
+        justify-content: space-between;
+        list-style: none;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+    
+    .li-elements-profile {
+        display: flex;
+        justify-items: center;
+    }
+
+    .nav-itens-profile {
+        display: flex;
+        cursor: pointer;
+        text-decoration: none;
+        justify-content: center;
+    }
+
+    .container-logo-profile {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 90%;
+    }
+
+    .logo-image-profile {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    .main-profile {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .container-form-profile {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+        margin-top: 2%;
+    }
+
+    .form-profile {
+        display: flex;
+        flex-direction: column;
+        background-color: #09070e;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        align-self: center;
+    }
+
+    .text-description-profile {
+        font-size: 1.6em;
+        text-shadow: 1px 2px 2px rgb(131, 162, 163);
+    }
+
+    .textarea-profile {
+        background-color: #09070e;
+        border: none;
+        width: 50%; 
+        height: 40px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    .textarea-bio {
+        width: 50%;
+        height: 13vh;
+        resize: none;
+        padding: 2%;
+        margin-bottom: 3%;
+        border-radius: 5px;
+    }
 }

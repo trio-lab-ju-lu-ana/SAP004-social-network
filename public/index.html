@@ -13,11 +13,9 @@
 
 <body>
 
- 
-    
-
-  
-    <div id="root" class="root-page"></div>
+  <main>
+    <div id="root" class="full-height"></div>
+  </main>
   
 
   <!-- The core Firebase JS SDK is always required and must be listed first-->
@@ -43,12 +41,13 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
 
     const AUTH = firebase.auth()
     const DATA_BASE = firebase.firestore()
   </script>
+
   <script type="module" src="index.js"></script>
+
 </body>
 
 </html>

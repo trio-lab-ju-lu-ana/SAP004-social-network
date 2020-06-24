@@ -3,7 +3,7 @@ import { handleFirebaseError } from '../../utils/errorHandler.js';
 
 export const signUp = () => {
   const container = document.createElement('div');
-
+  container.className = 'full-height align-items-login';
   const template = `
   <div class='align-items-login'>
     <div class='align-logo'>
