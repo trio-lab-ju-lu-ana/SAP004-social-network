@@ -3,7 +3,7 @@ import { handleFirebaseError } from '../../utils/errorHandler.js';
 
 export const login = () => {
   const container = document.createElement('div');
-
+  container.className = 'full-height align-items-login';
   const template = `
   <div class='align-items-login'>
     <div class='align-logo'>
@@ -27,7 +27,7 @@ export const login = () => {
           <p> Ou entre com:</p>
         </div>
         <div class='container-buttons-login'>
-          <button><i class='fab fa-2x  fa-google'></i></button>
+          <button id='login-google'><i class='fab fa-2x  fa-google'></i></button>
         </div>
         <div>
           <p>Não tem uma Conta?
@@ -56,6 +56,14 @@ export const login = () => {
   };
 
   loginForm.addEventListener('submit', handleLogin);
+
+  container.querySelector('#login-google').addEventListener('click', () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then((result) => {
+    }).catch((error) => {
+      handleFirebaseError(error, errorAlert);
+    });
+  });
 
   return container;
 };
