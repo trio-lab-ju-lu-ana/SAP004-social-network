@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import {
   logout, creatAPost, addLike, deletePost,
 } from './data.js';
