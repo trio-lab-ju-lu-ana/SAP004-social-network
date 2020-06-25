@@ -1,9 +1,9 @@
-import {logout} from './data.js';
+import { logout } from './data.js';
 
 export const profileUser = () => {
-    const container = document.createElement('div');
-  
-    const template = `
+  const container = document.createElement('div');
+  container.className = 'full-height align-items-login';
+  const template = `
     <header class='header-feed'>
     <input class='check' type='checkbox' id='check'>
     <label class='image' id='icon' for='check'><img src='../images/menu-icon2.png'></label>
@@ -43,16 +43,22 @@ export const profileUser = () => {
         <fieldset class="textarea">
           <input id='nick-name' type='text' placeholder="Nick">
         </fieldset>
+<<<<<<< HEAD
+        <h2 class='text-description-register'>Bio</h2>
+        <textarea class='textarea-bio' placeholder='Que jogos curte? E qual é sua plataforma favorita? Fale mais sobre você!'></textarea>
+          
+=======
         <h2>Bio</h2>
         <textarea >Que jogos curte? E qual é sua plataforma favorita?
             Fale mais sobre você!
           </textarea>
+>>>>>>> develop-LUANA
       </form>
     </div>
         `;
-    container.innerHTML += template;
-    const logoutUser = container.querySelector('#logout');
-    logoutUser.addEventListener('click', logout)
-   
-    return container;
+  container.innerHTML += template;
+  const logoutUser = container.querySelector('#logout');
+  logoutUser.addEventListener('click', logout);
+
+  return container;
 };
