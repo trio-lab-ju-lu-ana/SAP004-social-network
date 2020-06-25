@@ -1,13 +1,7 @@
-import { logout, creatAPost, addLike,deletePost} from './data.js';
+import {
+  logout, creatAPost, addLike, deletePost,
+} from './data.js';
 
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     if (user != null) {
-//       name = user.displayName;
-//     }
-//   } else {
-//   }
-// });
 
 export const feed = () => {
   const container = document.createElement('div');
@@ -44,17 +38,17 @@ export const feed = () => {
     <div class='main-container'>
       <div class='container-image-photo-name'>
         <div class='container-image'>
-          <p class='element-identifier'>Illustrative image</p>
+        <img class='ilustrative-area' src='../images/ilustrative.jpg' title='profile' alt='profile'>
         </div>
         <div class='container-photo-name'>
           <div class='container-photo'>
-            <div >
-            <img class='photo-area' class='element-identifier' src="../images/profile.png"" alt="Avatar" >
+            <div class='photo-area'>
+            <img class='photo-area' src='../images/profile.png' title='profile' alt='profile'>
             </div>
           </div>
         <div class='container-name'>
           <p id='name-user' class='element-identifier'>${firebase.auth().currentUser}</p>
-          <p class='element-identifier'>Nick</p>
+         
         </div>
       </div>
     </div>
@@ -82,25 +76,30 @@ export const feed = () => {
     </div>
   </main>
 `;
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    container.querySelector('#name-user').innerHTML = firebase.auth().currentUser.displayName;
-  }
-});
-const renderAllPosts = (feedContainer) => {
-  DATA_BASE.collection("posts").onSnapshot((querySnapshot)=>{
-     let posts = []
-     
-  
-     querySnapshot.forEach((doc)=> {
-         posts.push(doc.data());
-     })
-     feedContainer.innerHTML = posts.map(post => `
+
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      container.querySelector('#name-user').innerHTML = firebase.auth().currentUser.displayName;
+    }
+  });
+
+  const renderAllPosts = (feedContainer) => {
+    DATA_BASE.collection('posts').orderBy('postTime', 'desc').onSnapshot((querySnapshot) => {
+      let posts = [];
+      querySnapshot.forEach((doc) => {
+        posts.push(doc.data());
+      });
+
+      let date = new Date();
+
+
+      feedContainer.innerHTML = posts.map(post => `
      <div>
     <div class='container-created-post'>
       <div class='container-info-post'>
-      <span id="userName">${post.name}</span>
-        <button class="button" title='Like'>
+        <span class ='post-username' id="userName">${post.name}</span>
+        <span class ='timestamp' id='timestamp-value'>${post.postTime.toDate().getDate()}</span>
+        <button class="button" title='Opções'>
           <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
         </button>
       </div>
@@ -108,19 +107,16 @@ const renderAllPosts = (feedContainer) => {
       <p>${post.text}</p>
       </div>
       <div class='container-buttons'>
-          <button class="btnLike" name="${post.id}" id="${post.postId}"   class="button" title='Like'>
+          <button class='btnLike'   class="button" title='Like'>
           <span >${post.likes}</span>
             <i class="far fa-star"></i>
           </button>
-          <button class="btnL-delete" id="${post.id}" class="button" title='Delete'>
-          <i class="fa fa-trash" aria-hidden="true"></i>
+          <button class='deletePost' class="button" title='Deletar'>
+            <i class="fa fa-trash" aria-hidden="true"></i>
           </button>
         </div>
-    </div>`).join("")
-  })
-
- 
-   
+    </div>`).join('');
+    });
   };
 
   container.innerHTML += template;
@@ -128,12 +124,11 @@ const renderAllPosts = (feedContainer) => {
   const logoutUser = container.querySelector('#logout');
   const feedForm = container.querySelector('#my-feed');
   const allPosts = container.querySelector('#all-posts');
-  
+
   const attachButton = container.querySelector('#attach-button');
   const attachedImage = container.querySelector('#attached-image');
   const containerAttachedImage = container.querySelector('#container-image-button');
 
-  
 
   attachButton.addEventListener('change', function attachImage() {
     const file = this.files[0];
@@ -156,7 +151,7 @@ const renderAllPosts = (feedContainer) => {
   });
 
   const removeImage = container.querySelector('#remove-image');
-  removeImage.addEventListener('click', function removeAttachedImage() {
+  removeImage.addEventListener('click', () => {
     containerAttachedImage.style.visibility = 'hidden';
     containerAttachedImage.style.marginBottom = '0px';
     containerAttachedImage.style.height = '10%';
@@ -171,19 +166,15 @@ const renderAllPosts = (feedContainer) => {
       deletePost(uidPost);
     });
   });
-  setTimeout(() => {
-    const btnLike = container.querySelectorAll('.btnLike');
-    btnLike.forEach((id) => {
-      id.addEventListener('click', (e) => {
-        const uidPost = e.target.getAttribute('');
-        const user = firebase.auth().currentUser.uid;
-        addLike(uidPost, user);
-      });
+
+  const btnLike = container.querySelectorAll('.btnLike');
+  btnLike.forEach((doc) => {
+    doc.addEventListener('click', (e) => {
+      const uidPost = e.target.getAttribute('id');
+      const user = firebase.auth().currentUser.uid;
+      addLike(uidPost, user);
     });
-  }, 2000);
-  
-
-
+  });
 
   const handlePostSubmit = (e) => {
     e.preventDefault();
