@@ -13,10 +13,7 @@ export const signUp = () => {
       <form class="form" id="register-form">
         <h2 class='text-description-register' id='register'>Cadastre-se - É rápido!</h2>
         <fieldset class="textarea">
-          <input id='name' type='text' placeholder="Nome">
-        </fieldset>
-        <fieldset class="textarea">
-          <input id='last-name' type='text' placeholder="Sobrenome">
+          <input id='name' type='text' placeholder="Nome e Sobrenome">
         </fieldset>
         <fieldset class="textarea">
           <input id='userEmail' type='email' placeholder="E-mail" required>

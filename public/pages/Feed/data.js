@@ -11,12 +11,16 @@ export const creatAPost = (text) => {
       text:text,
       name: firebase.auth().currentUser.displayName,
       userUid: firebase.auth().currentUser.uid,
-      likes: 0
-  })
+      likes: 0,
+      whoLiked: [],
+    })
   .then((docs)=> {
       console.log("created with id:", docs.id)
+      
+      
   }).catch((error) =>{
       console.log("erro:", error)
+      
   })
  
   var user = firebase.auth().currentUser;
@@ -32,63 +36,41 @@ export const creatAPost = (text) => {
   }
 }
 
-function getLike(ref) {
-  return ref.collection('posts').get().then(snapshot => {
-      let total_likes = 0;
-      snapshot.forEach(doc => {
-          total_likes += doc.data().likes;
-      });
-      
+export function deletePost(id) {
+  firebase.firestore().collection('posts').doc(id).delete();
+}
 
-      return total_likes;
+
+const updateLike = (likes, whoLiked, id) => {
+  firebase.firestore().collection('posts').doc(likes).update({
+    like: likes,
+    whoLiked,
   });
-  
+};
+
+export function addLike(uidPost, user) {
+  firebase.firestore().collection('posts').doc(uidPost).get()
+    .then((doc) => {
+      const whoLiked = doc.data().whoLiked;
+      let likes = doc.data().like;
+      if (whoLiked.includes(user)) {
+        likes = firebase.firestore.FieldValue.increment(-1);
+        const index = whoLiked.findIndex(elem => elem === user);
+        whoLiked.splice(index, 1);
+      } else {
+        likes = firebase.firestore.FieldValue.increment(1);
+        whoLiked.push(user);
+      }
+      updateLike(likes, whoLiked, uidPost);
+    });
 }
 
 
 
-export const renderAllPosts = (feedContainer) => {
-    DATA_BASE.collection("posts").onSnapshot((querySnapshot)=>{
-       let posts = []
-       let likes = []
-  
-       querySnapshot.forEach((doc)=> {
-           likes.push(doc.data());
-       })
-    
-       querySnapshot.forEach((doc)=> {
-           posts.push(doc.data());
-       })
-       feedContainer.innerHTML = posts.map(post => `
-       <div>
-      <div class='container-created-post'>
-        <div class='container-info-post'>
-        <span id="userName">${post.name}</span>
-          <button class="button" title='Like'>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </button>
-        </div>
-        <div id="all-posts" class='posted-message'>
-        <p>${post.text}</p>
-        </div>
-        <div class='container-buttons'>
-            <button id="like-button"   class="button" title='Like'>
-            <span id="numbers-like" class="like-cont">${post.likes}</span>
-              <i class="far fa-star"></i>
-            </button>
-            <button class="button" title='Share'>
-              <i class="fas fa-share-square"></i>
-            </button>
-          </div>
-      </div>`).join("")
-    })
-  
-   
-     
-    };
+
  
 
-console.log(getLike)
+
  
   
   

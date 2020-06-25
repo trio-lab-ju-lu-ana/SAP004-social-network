@@ -1,4 +1,4 @@
-import { logout, creatAPost, renderAllPosts} from './data.js';
+import { logout, creatAPost, addLike,deletePost} from './data.js';
 
 // firebase.auth().onAuthStateChanged((user) => {
 //   if (user) {
@@ -33,7 +33,7 @@ export const feed = () => {
       </div>
 
       <li class='li-elements'>
-        <a id='logout' class='nav-itens' title='Logout'>Logout</a>
+        <a id='logout' class='logout' class='nav-itens' title='Logout'>Logout</a>
       </li>
 
     </ul>
@@ -44,17 +44,17 @@ export const feed = () => {
     <div class='main-container'>
       <div class='container-image-photo-name'>
         <div class='container-image'>
-          <p class='element-identifier'>Illustrative image</p>
+          <img class='ilustrative-area'  class='element-identifier'  src="../images/ilustrative.jpg" >
         </div>
         <div class='container-photo-name'>
           <div class='container-photo'>
-            <div class='photo-area'>
-              <p class='element-identifier'>Profile Photo</p>
+            <div >
+            <img class='photo-area' class='element-identifier' src="../images/profile.png"" alt="Avatar" >
             </div>
           </div>
         <div class='container-name'>
-          <p class='element-identifier'>${firebase.auth().currentUser}</p>
-          <p class='element-identifier'>Nick</p>
+          <p id='name-user' class='element-identifier'>${firebase.auth().currentUser}</p>
+          
         </div>
       </div>
     </div>
@@ -82,6 +82,46 @@ export const feed = () => {
     </div>
   </main>
 `;
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    container.querySelector('#name-user').innerHTML = firebase.auth().currentUser.displayName;
+  }
+});
+const renderAllPosts = (feedContainer) => {
+  DATA_BASE.collection("posts").onSnapshot((querySnapshot)=>{
+     let posts = []
+     
+  
+     querySnapshot.forEach((doc)=> {
+         posts.push(doc.data());
+     })
+     feedContainer.innerHTML = posts.map(post => `
+     <div>
+    <div class='container-created-post'>
+      <div class='container-info-post'>
+      <span id="userName">${post.name}</span>
+        <button class="button" title='Like'>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="all-posts" class='posted-message'>
+      <p>${post.text}</p>
+      </div>
+      <div class='container-buttons'>
+          <button class="btnLike" name="${post.id}" id="${post.postId}"   class="button" title='Like'>
+          <span >${post.likes}</span>
+            <i class="far fa-star"></i>
+          </button>
+          <button class="btnL-delete" id="${post.id}" class="button" title='Delete'>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+    </div>`).join("")
+  })
+
+ 
+   
+  };
 
   container.innerHTML += template;
 
@@ -92,6 +132,8 @@ export const feed = () => {
   const attachButton = container.querySelector('#attach-button');
   const attachedImage = container.querySelector('#attached-image');
   const containerAttachedImage = container.querySelector('#container-image-button');
+
+  
 
   attachButton.addEventListener('change', function attachImage() {
     const file = this.files[0];
@@ -121,6 +163,26 @@ export const feed = () => {
   });
 
   logoutUser.addEventListener('click', logout);
+
+  const btnDeletePost = container.querySelectorAll('.deletePost');
+  btnDeletePost.forEach((doc) => {
+    doc.addEventListener('click', (e) => {
+      const uidPost = e.target.getAttribute('id');
+      deletePost(uidPost);
+    });
+  });
+  setTimeout(() => {
+    const btnLike = container.querySelectorAll('.btnLike');
+    btnLike.forEach((id) => {
+      id.addEventListener('click', (e) => {
+        const uidPost = e.target.getAttribute('');
+        const user = firebase.auth().currentUser.uid;
+        addLike(uidPost, user);
+      });
+    });
+  }, 2000);
+  
+
 
 
   const handlePostSubmit = (e) => {
