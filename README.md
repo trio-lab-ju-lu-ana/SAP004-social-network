@@ -6,8 +6,8 @@
 * [1 - Prefácio](#1-prefácio)
 * [2 - Produto](#2-produto)
  * [2.1 - Interfaces e Layouts](#2.1-interfaces-e-layouts)
- * [2.2 - Considerações Técnicas](#2.2-considerações-técnicas)
-* [3 - Entrega](#3-entrega)
+ * [2.2 - Funcionalidades](#2.2-funcionalidades)
+* [3 - Considerações Técnicas](#3-considerações-técnicas)
  * [3.1 - Ferramentas](#3.1-ferramentas)
  * [3.2 - Diagrama da Aplicação](#3.2-diagrama-da-aplicação)
 * [4 - Autoras](#4-autoras)
@@ -57,21 +57,22 @@ mas aplicando as normas pré-estabelecidas pela Laboratoria, sendo elas:
   *	Layouts:
 
   [- Mobile: Login e Feed:](https://user-images.githubusercontent.com/32286663/56174616-ec9f6100-5fb8-11e9-9edb-d5ef7c251d9c.png)
+
   [- Desktop: Login e Feed:](https://user-images.githubusercontent.com/32286663/56174626-fcb74080-5fb8-11e9-8854-26e8d9c4e25f.png)
 
   **Telas Finais:**
 
-  [-Tela Login Desktop:]()
+  [- Tela Login Desktop:]()
 
-  [-Tela Cadastro Desktop:]()
+  [- Tela Cadastro Desktop:]()
 
-  [-Tela Perfil Desktop:]()
+  [- Tela Perfil Desktop:]()
 
-  [-Tela Feed Desktop:]()
+  [- Tela Feed Desktop:]()
 
-  [-Tela Login Mobile:]()
+  [- Tela Login Mobile:]()
 
-  [-Tela Feed Mobile:]()
+  [- Tela Feed Mobile:]()
 
 ### 2.2 - Funcionalidades
 
@@ -150,5 +151,6 @@ Este projeto foi desenvolvido por:
   - e-mail: luana.las21@gmail.com
 
 *	Jucielly da Silva
+
   - e-mail: juciellysouzasilva@gmail.com
 
