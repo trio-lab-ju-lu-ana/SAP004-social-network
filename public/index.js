@@ -8,9 +8,15 @@ import { profileUser } from './pages/User/main.js';
 const root = document.querySelector('#root');
 
 const renderRoute = (route, title) => {
-  document.title = title;
   root.innerHTML = '';
+<<<<<<< HEAD
   root.appendChild(route());
+=======
+  document.title = title;
+  
+  root.appendChild(route());
+ 
+>>>>>>> develop-LUANA
 };
 
 const routes = [{

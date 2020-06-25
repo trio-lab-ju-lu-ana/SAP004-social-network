@@ -62,7 +62,11 @@ export const login = () => {
   container.querySelector('#login-google').addEventListener('click', () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then((result) => {
+<<<<<<< HEAD
       localStorage.setItem('user', JSON.stringify(result.user));
+=======
+      localStorage.setItem("user", JSON.stringify(result.user));
+>>>>>>> develop-LUANA
       window.location.hash = '#feed';
     }).catch((error) => {
       handleFirebaseError(error, errorAlert);
