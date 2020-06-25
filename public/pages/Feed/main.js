@@ -251,7 +251,7 @@ const renderAllPosts = (feedContainer) => {
    
    
 
-  setTimeout(() => {
+ 
     const btnLike = container.querySelectorAll('.btnLike');
     btnLike.forEach((btn) => {
       btn.addEventListener('click', (e) => {
@@ -260,7 +260,7 @@ const renderAllPosts = (feedContainer) => {
         addLike(uidPost, user);
       });
     });
-  }, 2000);
+  };
   
 
 
