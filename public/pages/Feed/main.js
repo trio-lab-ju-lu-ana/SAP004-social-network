@@ -2,15 +2,6 @@ import {
   logout, creatAPost, addLike, deletePost,
 } from './data.js';
 
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     if (user != null) {
-//       name = user.displayName;
-//     }
-//   } else {
-//   }
-// });
-
 
 export const feed = () => {
   const container = document.createElement('div');
@@ -47,17 +38,17 @@ export const feed = () => {
     <div class='main-container'>
       <div class='container-image-photo-name'>
         <div class='container-image'>
-          <p class='element-identifier'>Illustrative image</p>
+        <img class='ilustrative-area' src='../images/ilustrative.jpg' title='profile' alt='profile'>
         </div>
         <div class='container-photo-name'>
           <div class='container-photo'>
             <div class='photo-area'>
-              <p class='element-identifier'>Profile Photo</p>
+            <img class='photo-area' src='../images/profile.png' title='profile' alt='profile'>
             </div>
           </div>
         <div class='container-name'>
           <p id='name-user' class='element-identifier'>${firebase.auth().currentUser}</p>
-          <p class='element-identifier'>Nick</p>
+         
         </div>
       </div>
     </div>

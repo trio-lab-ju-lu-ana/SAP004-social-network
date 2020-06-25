@@ -46,9 +46,11 @@ export const login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    console.log(':)');
     const email = loginForm.userEmail.value;
     const password = loginForm.userPassword.value;
     loginUser(email, password).then(() => {
+      console.log('Foi');
       window.location.hash = '#feed';
     }).catch((error) => {
       handleFirebaseError(error, errorAlert);
