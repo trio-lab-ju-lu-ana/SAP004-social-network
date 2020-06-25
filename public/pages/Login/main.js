@@ -31,7 +31,7 @@ export const login = () => {
         </div>
         <div>
           <p>Não tem uma Conta?
-            <a href='#register'>Cadastre-se!</a>
+            <a href='#register'> Cadastre-se!</a>
           </p>
         </div>
       </form>
@@ -46,11 +46,9 @@ export const login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(':)');
     const email = loginForm.userEmail.value;
     const password = loginForm.userPassword.value;
     loginUser(email, password).then(() => {
-      console.log('Foi');
       window.location.hash = '#feed';
     }).catch((error) => {
       handleFirebaseError(error, errorAlert);

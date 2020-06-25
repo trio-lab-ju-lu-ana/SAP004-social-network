@@ -6,12 +6,13 @@ export const logout = (e) => {
 };
 
 
-export const creatAPost = (text) => {
+export const creatAPost = (message) => {
   DATA_BASE.collection('posts').add({
-    text:text,
+    text: message,
     name: firebase.auth().currentUser.displayName,
     userUid: firebase.auth().currentUser.uid,
     likes: 0,
+    postTime: firebase.firestore.FieldValue.serverTimestamp(),
   })
     .then((docs) => {
       console.log('created with id:', docs.id);
@@ -60,3 +61,8 @@ export function addLike(doc, user) {
     });
   };
 }
+
+// export function readTimestamp(date) {
+//   let newDate = date.toDate() * 1000;
+//   let newTimestamp = newDate.getYear() + '-' + newDate.getMonth() + '-' +  newDate.getDate() + '_' + newDate.getHours();
+// };

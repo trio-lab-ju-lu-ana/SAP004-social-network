@@ -11,6 +11,7 @@ import {
 //   }
 // });
 
+
 export const feed = () => {
   const container = document.createElement('div');
   const template = `
@@ -92,18 +93,22 @@ export const feed = () => {
   });
 
   const renderAllPosts = (feedContainer) => {
-    DATA_BASE.collection('posts').onSnapshot((querySnapshot) => {
+    DATA_BASE.collection('posts').orderBy('postTime', 'desc').onSnapshot((querySnapshot) => {
       let posts = [];
       querySnapshot.forEach((doc) => {
         posts.push(doc.data());
       });
 
+      let date = new Date();
+
+
       feedContainer.innerHTML = posts.map(post => `
      <div>
     <div class='container-created-post'>
       <div class='container-info-post'>
-      <span class ='post-username'id="userName">${post.name}</span>
-        <button class="button" title='Like'>
+        <span class ='post-username' id="userName">${post.name}</span>
+        <span class ='timestamp' id='timestamp-value'>${post.postTime.toDate().getDate()}</span>
+        <button class="button" title='Opções'>
           <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
         </button>
       </div>

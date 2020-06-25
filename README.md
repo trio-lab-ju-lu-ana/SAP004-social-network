@@ -137,7 +137,7 @@ reuniões e conversas de planejamento para adequações e decisões relacionadas
 Para direcionamento do projeto em relação ao desenvolvimento e as dependências de cada interface, foi criado um diagrama 
 da aplicação no site *Drawio*, o mesmo se encontra abaixo.
 
-[- Diagrama da Aplicação]()
+[- Diagrama da Aplicação](https://user-images.githubusercontent.com/61169143/85651521-a21a7980-b67e-11ea-93f4-11c5c82bd8ea.png)
 
 
 ## 4. Autoras
