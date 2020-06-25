@@ -8,9 +8,11 @@ import { profileUser } from './pages/User/main.js';
 const root = document.querySelector('#root');
 
 const renderRoute = (route, title) => {
-  document.title = title;
   root.innerHTML = '';
+  document.title = title;
+  
   root.appendChild(route());
+ 
 };
 
 const routes = [{

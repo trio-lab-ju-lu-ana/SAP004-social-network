@@ -36,32 +36,36 @@ export const creatAPost = (text) => {
   }
 }
 
-export function deletePost(id) {
-  firebase.firestore().collection('posts').doc(id).delete();
-}
+export const deletePost = (post) => {
+  firebase.firestore().collection('posts').doc(post).delete()
+    .then(() => {
+      console.log('document sucessfully deleted');
+    });
+};
 
 
-const updateLike = (likes, whoLiked, id) => {
-  firebase.firestore().collection('posts').doc(likes).update({
-    like: likes,
+
+const updateLike = (docs, whoLiked) => {
+  firebase.firestore().collection('posts').doc(docs.data.id).update({
+    likes: likes,
     whoLiked,
   });
 };
 
-export function addLike(uidPost, user) {
-  firebase.firestore().collection('posts').doc(uidPost).get()
+export function addLike(likes, name) {
+  firebase.firestore().collection('posts').doc((doc.data.id)).get()
     .then((doc) => {
       const whoLiked = doc.data().whoLiked;
-      let likes = doc.data().like;
-      if (whoLiked.includes(user)) {
+      let likes = doc.data().likes;
+      if (whoLiked.includes(user.uid)) {
         likes = firebase.firestore.FieldValue.increment(-1);
-        const index = whoLiked.findIndex(elem => elem === user);
+        const index = whoLiked.findIndex(elem => elem === user.uid);
         whoLiked.splice(index, 1);
       } else {
         likes = firebase.firestore.FieldValue.increment(1);
-        whoLiked.push(user);
+        whoLiked.push(name);
       }
-      updateLike(likes, whoLiked, uidPost);
+      updateLike(likes, whoLiked);
     });
 }
 

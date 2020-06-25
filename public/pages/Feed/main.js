@@ -1,14 +1,5 @@
 import { logout, creatAPost, addLike,deletePost} from './data.js';
 
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     if (user != null) {
-//       name = user.displayName;
-//     }
-//   } else {
-//   }
-// });
-
 export const feed = () => {
   const container = document.createElement('div');
   const template = `
@@ -87,6 +78,8 @@ firebase.auth().onAuthStateChanged((user) => {
     container.querySelector('#name-user').innerHTML = firebase.auth().currentUser.displayName;
   }
 });
+
+
 const renderAllPosts = (feedContainer) => {
   DATA_BASE.collection("posts").onSnapshot((querySnapshot)=>{
      let posts = []
@@ -108,15 +101,18 @@ const renderAllPosts = (feedContainer) => {
       <p>${post.text}</p>
       </div>
       <div class='container-buttons'>
-          <button class="btnLike" name="${post.id}" id="${post.postId}"   class="button" title='Like'>
+          <button class="btnLike" class="button" title='Like'>
           <span >${post.likes}</span>
             <i class="far fa-star"></i>
           </button>
-          <button class="btnL-delete" id="${post.id}" class="button" title='Delete'>
+          <button  id="btnDelete" id="${post.id}" class="button" title='Delete'>
           <i class="fa fa-trash" aria-hidden="true"></i>
           </button>
+
+          
         </div>
-    </div>`).join("")
+    </div>`
+    ).join("")
   })
 
  
@@ -164,17 +160,23 @@ const renderAllPosts = (feedContainer) => {
 
   logoutUser.addEventListener('click', logout);
 
-  const btnDeletePost = container.querySelectorAll('.deletePost');
-  btnDeletePost.forEach((doc) => {
-    doc.addEventListener('click', (e) => {
-      const uidPost = e.target.getAttribute('id');
-      deletePost(uidPost);
-    });
-  });
+  
+  
+  const btnDelete = container.querySelector('btnDelete');
+      if (btnDelete) {
+        btnDelete.addEventListener('click', () => {
+          deletePost(posts.id);
+          container.innerHTML = '';
+        });
+      }
+      console.log(btnDelete)
+   
+   
+
   setTimeout(() => {
     const btnLike = container.querySelectorAll('.btnLike');
-    btnLike.forEach((id) => {
-      id.addEventListener('click', (e) => {
+    btnLike.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
         const uidPost = e.target.getAttribute('');
         const user = firebase.auth().currentUser.uid;
         addLike(uidPost, user);
@@ -192,6 +194,7 @@ const renderAllPosts = (feedContainer) => {
   };
 
   renderAllPosts(allPosts);
+  
 
   feedForm.addEventListener('submit', handlePostSubmit);
 
