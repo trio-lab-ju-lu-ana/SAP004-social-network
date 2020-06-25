@@ -40,26 +40,30 @@ export const login = () => {
       `;
   container.innerHTML += template;
 
-  const loginForm = container.querySelector('#login-form');
+  const btnLogin = container.querySelector('#entrar');
   const errorAlert = container.querySelector('.alert');
-
+  const loginForm = container.querySelector('#login-form');
 
   const handleLogin = (e) => {
     e.preventDefault();
+    console.log(':)');
     const email = loginForm.userEmail.value;
     const password = loginForm.userPassword.value;
     loginUser(email, password).then(() => {
+      console.log('Foi');
       window.location.hash = '#feed';
     }).catch((error) => {
       handleFirebaseError(error, errorAlert);
     });
   };
 
-  loginForm.addEventListener('submit', handleLogin);
+  btnLogin.addEventListener('click', handleLogin);
 
   container.querySelector('#login-google').addEventListener('click', () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then((result) => {
+      localStorage.setItem('user', JSON.stringify(result.user));
+      window.location.hash = '#feed';
     }).catch((error) => {
       handleFirebaseError(error, errorAlert);
     });

@@ -10,27 +10,27 @@ const root = document.querySelector('#root');
 const renderRoute = (route, title) => {
   document.title = title;
   root.innerHTML = '';
-  root.appendChild(route);
+  root.appendChild(route());
 };
 
 const routes = [{
   route: 'login',
-  html: login(),
+  html: login,
   title: 'Login',
 },
 {
   route: 'register',
-  html: signUp(),
+  html: signUp,
   title: 'Cadastro',
 },
 {
   route: 'profile',
-  html: profileUser(),
+  html: profileUser,
   title: 'Perfil',
 },
 {
   route: 'feed',
-  html: feed(),
+  html: feed,
   title: 'Feed',
   private: true,
 },

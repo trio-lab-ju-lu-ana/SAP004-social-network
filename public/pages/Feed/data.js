@@ -7,90 +7,56 @@ export const logout = (e) => {
 
 
 export const creatAPost = (text) => {
-  DATA_BASE.collection("posts").add({
-      text:text,
-      name: firebase.auth().currentUser.displayName,
-      userUid: firebase.auth().currentUser.uid,
-      likes: 0
+  DATA_BASE.collection('posts').add({
+    text:text,
+    name: firebase.auth().currentUser.displayName,
+    userUid: firebase.auth().currentUser.uid,
+    likes: 0,
   })
-  .then((docs)=> {
-      console.log("created with id:", docs.id)
-  }).catch((error) =>{
-      console.log("erro:", error)
-  })
- 
-  var user = firebase.auth().currentUser;
+    .then((docs) => {
+      console.log('created with id:', docs.id);
+    }).catch((error) => {
+      console.log('erro:', error);
+    });
+
+  let user = firebase.auth().currentUser;
 
   if (user != null) {
     user.providerData.forEach(function (profile) {
-      console.log("Sign-in provider: " + profile.providerId);
-      console.log("  Provider-specific UID: " + profile.uid);
-      console.log("  Name: " + profile.displayName);
-      console.log("  Email: " + profile.email);
-      console.log("  Photo URL: " + profile.photoURL);
+      console.log('Sign-in provider: ' + profile.providerId);
+      console.log('  Provider-specific UID: ' + profile.uid);
+      console.log('  Name: ' + profile.displayName);
+      console.log('  Email: ' + profile.email);
+      console.log('  Photo URL: ' + profile.photoURL);
     });
   }
-}
+};
 
-function getLike(ref) {
-  return ref.collection('posts').get().then(snapshot => {
-      let total_likes = 0;
-      snapshot.forEach(doc => {
-          total_likes += doc.data().likes;
-      });
-      
-
-      return total_likes;
-  });
-  
+export function deletePost(doc) {
+  firebase.firestore().collection('posts').doc(doc).delete();
 }
 
 
+export function addLike(doc, user) {
+  firebase.firestore().collection('posts').doc(doc).get()
+    .then((doc) => {
+      const whoLiked = doc.data().whoLiked;
+      let likes = doc.data().likes;
+      if (whoLiked.includes(user)) {
+        likes = firebase.firestore.FieldValue.increment(-1);
+        const index = whoLiked.findIndex(elem => elem === user);
+        whoLiked.splice(index, 1);
+      } else {
+        likes = firebase.firestore.FieldValue.increment(1);
+        whoLiked.push(user);
+      }
+      updateLike(likes, whoLiked, doc);
+    });
 
-export const renderAllPosts = (feedContainer) => {
-    DATA_BASE.collection("posts").onSnapshot((querySnapshot)=>{
-       let posts = []
-       let likes = []
-  
-       querySnapshot.forEach((doc)=> {
-           likes.push(doc.data());
-       })
-    
-       querySnapshot.forEach((doc)=> {
-           posts.push(doc.data());
-       })
-       feedContainer.innerHTML = posts.map(post => `
-       <div>
-      <div class='container-created-post'>
-        <div class='container-info-post'>
-        <span id="userName">${post.name}</span>
-          <button class="button" title='Like'>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </button>
-        </div>
-        <div id="all-posts" class='posted-message'>
-        <p>${post.text}</p>
-        </div>
-        <div class='container-buttons'>
-            <button id="like-button"   class="button" title='Like'>
-            <span id="numbers-like" class="like-cont">${post.likes}</span>
-              <i class="far fa-star"></i>
-            </button>
-            <button class="button" title='Share'>
-              <i class="fas fa-share-square"></i>
-            </button>
-          </div>
-      </div>`).join("")
-    })
-  
-   
-     
-    };
- 
-
-console.log(getLike)
- 
-  
-  
-
-
+  const updateLike = (likes, whoLiked, doc) => {
+    firebase.firestore().collection('posts').doc(doc).update({
+      like: likes,
+      whoLiked,
+    });
+  };
+}

@@ -36,7 +36,7 @@ input {
 .container-image-photo-name,
 .logo-login:hover,
 .container-buttons{
-    box-shadow: 2px 2px 2px 2px #FFEBF7, 4px 4px 4px 4px #FF85CC, 2px 2px 2px #FFEBF7;
+    box-shadow:  0px 0px 12px 4px #FF85CC;
 }
 
 /* .root-page {
@@ -76,6 +76,7 @@ input {
         width: 30%;
         height: 30px;
         margin: 0 auto;
+        margin-top: 60px;
     }
 
     .logo-login {
@@ -260,9 +261,10 @@ input {
 
     .logo-image-feed {
         cursor: pointer;
-        width: 70%;
-        margin-left:11%;
-        height: 30%;
+        width: 50%;
+        margin-left: 20%;
+        margin-top: 5%;
+        height: 20%;
         border-radius: 5px;
     }
 
@@ -452,7 +454,56 @@ input {
         padding-left: 1%;
     }
 
+    .button-attach {
+        background-image: url("../images/anexar6.png");
+	    background-position: center;
+        border-radius: 50%;
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
 
+    .button-attach::-webkit-file-upload-button {
+        visibility: hidden;
+    }
+    
+    .container-attached-image {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 10%;
+        margin-bottom: 10px;
+        visibility: hidden;
+    }
+
+    .remove-image {
+        background-image: url("../images/delete-sign2.png");
+        width: 10%;
+        height: 4vh;
+        cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .selected-image {
+        max-width: 90%;
+        max-height: 100%;
+        width: 34vw;
+        height: 8vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        object-fit: scale-down;
+    }
+
+    /* Profile -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+
+    .textarea-bio {
+        width: 80%;
+        height: 15vh;
+        resize: none;
+    }
 }
 
 @media only screen and (min-width: 601px) { 
@@ -623,17 +674,15 @@ input {
     a {
         color: rgb(131, 162, 163);
         font-size: 1.2em;
-        margin: 15px;
-        text-align: justify;
         text-decoration: none;
+        padding-right: 10px;
     }
 
     a:hover {
         color: #fb0094;
         font-size: 1.2em;
-        margin: 15px;
-        text-align: justify;
         text-decoration: none;
+        padding-right: 10px;
     }
 
     .header-feed {
@@ -643,6 +692,7 @@ input {
         flex-direction: row;
         justify-content: center;
         top: 0;
+        align-items: center;
     }
 
     .nav-feed {
@@ -651,6 +701,7 @@ input {
         justify-content: space-between;
         list-style: none;
         flex-direction: row;
+        align-items: center;
     }
 
     .li-elements {
@@ -662,7 +713,7 @@ input {
         display: flex;
         cursor: pointer;
         text-decoration: none;
-        justify-content: center;
+        justify-content: space-around;
     }
 
     .container-logo-feed {
@@ -761,6 +812,7 @@ input {
         border-radius: 5px;
         width: 500px; 
         height: 80px;
+        resize: none;
     }
 
     .buttons-area {
@@ -770,11 +822,7 @@ input {
 
     .button-attach {
         background-image: url("../images/anexar6.png");
-        /* background-attachment: fixed; */
 	    background-position: center;
-	    /* background-repeat: no-repeat; */
-	    /* background-size: cover; */
-        /* background-color: purple; */
         border-radius: 50%;
         margin-left: 10px;
         width: 30px;
@@ -860,6 +908,9 @@ input {
         padding-left: 10px;
     }
 
+    .post-username {
+        padding-top: 6px;
+    }
     /* Profile Page -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
     .header-profile {
@@ -946,7 +997,7 @@ input {
     }
 
     .textarea-bio {
-        width: 50%;
+        width: 30%;
         height: 13vh;
         resize: none;
         padding: 2%;
