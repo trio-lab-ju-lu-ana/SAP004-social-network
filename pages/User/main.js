@@ -44,7 +44,7 @@ export const profileUser = () => {
           <input id='nick-name' type='text' placeholder="Nick">
         </fieldset>
         <h2>Bio</h2>
-        <textarea >Que jogos curte? E qual é sua plataforma favorita?
+        <textarea class='area-bio' >Que jogos curte? E qual é sua plataforma favorita?
             Fale mais sobre você!
           </textarea>
       </form>
