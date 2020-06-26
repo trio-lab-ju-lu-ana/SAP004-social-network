@@ -1,19 +1,6 @@
 
-import {
-  logout, creatAPost, addLike, deletePost,
-} from './data.js';
-
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     if (user != null) {
-//       name = user.displayName;
-//     }
-//   } else {
-//   }
-// });
-=======
 import { logout, creatAPost, addLike,deletePost} from './data.js';
->>>>>>> develop-LUANA
+
 
 export const feed = () => {
   const container = document.createElement('div');
@@ -60,11 +47,6 @@ export const feed = () => {
           </div>
         <div class='container-name'>
           <p id='name-user' class='element-identifier'>${firebase.auth().currentUser}</p>
-<<<<<<< HEAD
-          <p class='element-identifier'>Nick</p>
-=======
-          
->>>>>>> develop-LUANA
         </div>
       </div>
     </div>
@@ -186,10 +168,6 @@ const renderAllPosts = (feedContainer) => {
   const attachedImage = container.querySelector('#attached-image');
   const containerAttachedImage = container.querySelector('#container-image-button');
 
-<<<<<<< HEAD
-=======
-  
->>>>>>> develop-LUANA
 
   attachButton.addEventListener('change', function attachImage() {
     const file = this.files[0];
@@ -220,14 +198,7 @@ const renderAllPosts = (feedContainer) => {
 
   logoutUser.addEventListener('click', logout);
 
-<<<<<<< HEAD
-  const btnDeletePost = container.querySelectorAll('.deletePost');
-  btnDeletePost.forEach((doc) => {
-    doc.addEventListener('click', (e) => {
-      const uidPost = e.target.getAttribute('id');
-      deletePost(uidPost);
-    });
-  });
+
 
   const btnLike = container.querySelectorAll('.btnLike');
   btnLike.forEach((doc) => {
@@ -237,7 +208,7 @@ const renderAllPosts = (feedContainer) => {
       addLike(uidPost, user);
     });
   });
-=======
+
   
   
   const btnDelete = container.querySelector('btnDelete');
@@ -248,23 +219,12 @@ const renderAllPosts = (feedContainer) => {
         });
       }
       console.log(btnDelete)
-   
-   
 
- 
-    const btnLike = container.querySelectorAll('.btnLike');
-    btnLike.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const uidPost = e.target.getAttribute('');
-        const user = firebase.auth().currentUser.uid;
-        addLike(uidPost, user);
-      });
-    });
   };
   
 
 
->>>>>>> develop-LUANA
+
 
   const handlePostSubmit = (e) => {
     e.preventDefault();
