@@ -7,7 +7,7 @@ export const feed = () => {
   const template = `
   <header class='header-feed'>
     <input class='check' type='checkbox' id='check'>
-    <label class='image' id='icon' for='check'><img src='../images/menu-icon2.png'></label>
+    <label class='image' id='icon' for='check'><img src='./images/menu-icon2.png'></label>
     <div class='bar'>
       <nav>
         <a class='a-hamburger-menu' href='#profile'><div class='link'>Profile</div></a>
@@ -22,7 +22,7 @@ export const feed = () => {
       </li>
 
       <div class='container-logo-feed'>
-        <img class='logo-image-feed' src='../images/AthenaLogoRetangular.png' title='Athena Hideout' alt='Athena Hideout Logo'>
+        <img class='logo-image-feed' src='./images/AthenaLogoRetangular.png' title='Athena Hideout' alt='Athena Hideout Logo'>
       </div>
 
       <li class='li-elements'>
@@ -37,12 +37,12 @@ export const feed = () => {
     <div class='main-container'>
       <div class='container-image-photo-name'>
         <div class='container-image'>
-          <img class='ilustrative-area'  class='element-identifier'  src="../images/ilustrative.jpg" >
+          <img class='ilustrative-area'  class='element-identifier'  src="./images/ilustrative.jpg" >
         </div>
         <div class='container-photo-name'>
           <div class='container-photo'>
             <div >
-            <img class='photo-area' class='element-identifier' src="../images/profile.png"" alt="Avatar" >
+            <img class='photo-area' class='element-identifier' src="./images/profile.png"" alt="Avatar" >
             </div>
           </div>
         <div class='container-name'>
