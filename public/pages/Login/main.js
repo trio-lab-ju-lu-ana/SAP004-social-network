@@ -7,7 +7,7 @@ export const login = () => {
   const template = `
   <div class='align-items-login'>
     <div class='align-logo'>
-       <img class='logo-login' src='../images/AthenaLogoQuadrado.png'>     
+       <img class='logo-login' src='./images/AthenaLogoQuadrado.png'>     
     </div>
     <div class='align'>
       <form class="form" id='login-form'>
