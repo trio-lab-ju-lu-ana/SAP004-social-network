@@ -21,7 +21,7 @@ export const profileUser = () => {
       </li>
 
       <div class='container-logo-feed'>
-        <img class='logo-image-feed' src='../images/AthenaLogoRetangular.png' title='Athena Hideout' alt='Athena Hideout Logo'>
+        <img class='logo-image-feed' src='./images/AthenaLogoRetangular.png' title='Athena Hideout' alt='Athena Hideout Logo'>
       </div>
 
       <li class='li-elements'>
@@ -43,16 +43,11 @@ export const profileUser = () => {
         <fieldset class="textarea">
           <input id='nick-name' type='text' placeholder="Nick">
         </fieldset>
-<<<<<<< HEAD
+
         <h2 class='text-description-register'>Bio</h2>
         <textarea class='textarea-bio' placeholder='Que jogos curte? E qual é sua plataforma favorita? Fale mais sobre você!'></textarea>
           
-=======
-        <h2>Bio</h2>
-        <textarea >Que jogos curte? E qual é sua plataforma favorita?
-            Fale mais sobre você!
-          </textarea>
->>>>>>> develop-LUANA
+
       </form>
     </div>
         `;
