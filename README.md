@@ -56,9 +56,9 @@ mas aplicando as normas pré-estabelecidas pela Laboratoria, sendo elas:
 
   *	Layouts:
 
-  [- Mobile: Login e Feed:](https://user-images.githubusercontent.com/32286663/56174616-ec9f6100-5fb8-11e9-9edb-d5ef7c251d9c.png)
+  ![- Mobile: Login e Feed:](https://user-images.githubusercontent.com/32286663/56174616-ec9f6100-5fb8-11e9-9edb-d5ef7c251d9c.png)
 
-  [- Desktop: Login e Feed:](https://user-images.githubusercontent.com/32286663/56174626-fcb74080-5fb8-11e9-8854-26e8d9c4e25f.png)
+  ![- Desktop: Login e Feed:](https://user-images.githubusercontent.com/32286663/56174626-fcb74080-5fb8-11e9-8854-26e8d9c4e25f.png)
 
   **Telas Finais:**
 
