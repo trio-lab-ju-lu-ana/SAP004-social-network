@@ -39,7 +39,7 @@ rotinas e preferências, e também conectar essas pessoas umas as outras atravé
 na rede social, podendo também formar uma rede de apoio de mulheres gamers dentro desse universo 
 gigantesco que é o mundo dos games!
 
-### 2.1. - Interfaces e Layouts
+### 2.1. Interfaces e Layouts
 
 Para o desenvolvimento deste projeto, interfaces e layouts foram definidos de previamente pela 
 Laboratoria e estipulados como modelos a serem replicados dentro dos diferentes temas escolhidos. 
@@ -74,7 +74,7 @@ mas aplicando as normas pré-estabelecidas pela Laboratoria, sendo elas:
 
   [- Tela Feed Mobile:]()
 
-### 2.2. - Funcionalidades
+### 2.2. Funcionalidades
 
 Este projeto possui algumas funcionalidades comuns à maioria das redes sociais, sendo elas:
 
@@ -102,7 +102,7 @@ de elementos e normas a ele aplicados, sendo eles:
   *	O posicionamento de objetos assim como a responsividade da aplicação, deveria ser criada a 
     partir de conceitos do *CSS Flexbox* e *Media Queries*;
 
-### 3.1. - Ferramentas
+### 3.1. Ferramentas
 
 #### Firebase
 
@@ -132,7 +132,7 @@ Para o planejamento e administração do projeto foi utilizado o *Trello*, onde 
 pelas Histórias de Usuário em *Sprints*, segundo a *Metodologia Agile*, para cada integrante do projeto. Sendo realizadas 
 reuniões e conversas de planejamento para adequações e decisões relacionadas ao mesmo.
 
-### 3.2. - Diagrama da Aplicação
+### 3.2. Diagrama da Aplicação
 
 Para direcionamento do projeto em relação ao desenvolvimento e as dependências de cada interface, foi criado um diagrama 
 da aplicação no site *Drawio*, o mesmo se encontra abaixo.
