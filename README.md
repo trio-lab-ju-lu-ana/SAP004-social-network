@@ -5,11 +5,11 @@
 
 * [1 - Prefácio](#1-prefácio)
 * [2 - Produto](#2-produto)
- * [2.1 - Interfaces e Layouts](#2.1-interfaces-e-layouts)
- * [2.2 - Funcionalidades](#2.2-funcionalidades)
+* [2.1 - Interfaces e Layouts](#2.1-interfaces-e-layouts)
+* [2.2 - Funcionalidades](#2.2-funcionalidades)
 * [3 - Considerações Técnicas](#3-considerações-técnicas)
- * [3.1 - Ferramentas](#3.1-ferramentas)
- * [3.2 - Diagrama da Aplicação](#3.2-diagrama-da-aplicação)
+* [3.1 - Ferramentas](#3.1-ferramentas)
+* [3.2 - Diagrama da Aplicação](#3.2-diagrama-da-aplicação)
 * [4 - Autoras](#4-autoras)
 
 
