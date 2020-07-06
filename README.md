@@ -150,8 +150,5 @@ Este projeto foi desenvolvido por:
 * Luana Andrade
   - e-mail: luana.las21@gmail.com
 
-* Ana Carolina dos Reis Ramos
-  - e-mail: ana.carolina.dos.reis.ramos@gmail.com
-
-*	Jucielly da Silva
+* Jucielly da Silva
   - e-mail: juciellysouzasilva@gmail.com
