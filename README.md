@@ -5,7 +5,7 @@
 
 * [1 - Prefácio](#1-prefácio)
 * [2 - Produto](#2-produto)
-* [2.1 - Interfaces e Layouts](#2-1-interfaces-e-layouts)
+* [2-1 - Interfaces e Layouts](#2-interfaces-e-layouts)
 * [2.2 - Funcionalidades](#2-2-funcionalidades)
 * [3 - Considerações Técnicas](#3-considerações-técnicas)
 * [3.1 - Ferramentas](#3-1-ferramentas)
@@ -39,7 +39,7 @@ rotinas e preferências, e também conectar essas pessoas umas as outras atravé
 na rede social, podendo também formar uma rede de apoio de mulheres gamers dentro desse universo 
 gigantesco que é o mundo dos games!
 
-### 2 1. Interfaces e Layouts
+###  2. Interfaces e Layouts
 
 Para o desenvolvimento deste projeto, interfaces e layouts foram definidos de previamente pela 
 Laboratoria e estipulados como modelos a serem replicados dentro dos diferentes temas escolhidos. 
