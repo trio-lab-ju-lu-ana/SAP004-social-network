@@ -151,6 +151,5 @@ Este projeto foi desenvolvido por:
   - e-mail: luana.las21@gmail.com
 
 *	Jucielly da Silva
-
   - e-mail: juciellysouzasilva@gmail.com
 
