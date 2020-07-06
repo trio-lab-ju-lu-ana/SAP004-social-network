@@ -62,17 +62,17 @@ mas aplicando as normas pré-estabelecidas pela Laboratoria, sendo elas:
 
   **Telas Finais:**
 
-  [- Tela Login Desktop:]()
+  ![- Tela Login Desktop:]()
 
-  [- Tela Cadastro Desktop:]()
+  ![- Tela Cadastro Desktop:]()
 
-  [- Tela Perfil Desktop:]()
+  ![- Tela Perfil Desktop:]()
 
-  [- Tela Feed Desktop:]()
+  ![- Tela Feed Desktop:]()
 
-  [- Tela Login Mobile:]()
+  ![- Tela Login Mobile:]()
 
-  [- Tela Feed Mobile:]()
+  ![- Tela Feed Mobile:]()
 
 ### 2 2. Funcionalidades
 
@@ -137,7 +137,7 @@ reuniões e conversas de planejamento para adequações e decisões relacionadas
 Para direcionamento do projeto em relação ao desenvolvimento e as dependências de cada interface, foi criado um diagrama 
 da aplicação no site *Drawio*, o mesmo se encontra abaixo.
 
-[- Diagrama da Aplicação]()
+![- Diagrama da Aplicação]()
 
 
 ## 4. Autoras
