@@ -89,7 +89,7 @@ Este projeto possui algumas funcionalidades comuns à maioria das redes sociais,
   *	Deletar posts criados;
 
 
-## 3 - Considerações Técnicas
+## 3. Considerações Técnicas
 
 Foi definida uma padronização do projeto pela Laboratória, onde teriam que ser utilizados 
 conceitos e ferramentas pré-determinadas, para que o mesmo atingisse uma aceitação mínima 
