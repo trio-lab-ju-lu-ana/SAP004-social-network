@@ -13,7 +13,7 @@
 * [4 - Autoras](#4-autoras)
 
 
-## 1. - Prefácio
+## 1. Prefácio
 
 Este projeto foi desenvolvido com o intuito de criar uma rede social com enfoque no 
 universo gamer destinada às mulheres *cis* e *trans*, onde todas possam expressar seus gostos, 
@@ -26,7 +26,7 @@ como mulheres, gerando ambientes de exclusão e negatividade nas plataformas de 
 em modos de jogo online.
 
 
-## 2. - Produto
+## 2. Produto
 
 Iniciado em trio e finalizado em dupla, no terceiro projeto pela Laboratoria, a *criação de 
 uma rede social* tinha a possibilidade de escolha do tema do projeto, onde foram dadas algumas 
