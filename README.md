@@ -5,7 +5,7 @@
 
 * [1 - Prefácio](#1-prefácio)
 * [2 - Produto](#2-produto)
-* [2.1 - Interfaces e Layouts](#2.1-interfaces-e-layouts)
+* [2.1 - Interfaces e Layouts](#2-1-interfaces-e-layouts)
 * [2.2 - Funcionalidades](#2.2-funcionalidades)
 * [3 - Considerações Técnicas](#3-considerações-técnicas)
 * [3.1 - Ferramentas](#3.1-ferramentas)
