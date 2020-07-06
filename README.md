@@ -152,4 +152,3 @@ Este projeto foi desenvolvido por:
 
 *	Jucielly da Silva
   - e-mail: juciellysouzasilva@gmail.com
-
